@@ -10,7 +10,7 @@ const App=express();
 App.use(cors());
 App.use(express.json());
 
-App.get('./',(req,res) =>{
+App.get('/',(req,res) =>{
     res.send({message:'Hello'})
 })
 
