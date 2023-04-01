@@ -35,6 +35,23 @@ class SignInForm extends Component {
     console.log(this.state);
   }
 
+
+
+  onSubmit = async(event) => {
+    event.preventDefault();
+    console.log("The form was submitted with the following data:");
+    console.log(this.state);
+
+    try{
+      await axios.post("http://localhost:3000/login", this.state);
+      alert("The login was successful");
+
+    }catch(error){
+      console.log("An error occurred")
+    }
+
+  }
+
   render() {
     return (
       <div className="formCenter">

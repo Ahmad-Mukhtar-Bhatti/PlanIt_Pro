@@ -21,7 +21,7 @@ App.use('/api/v1/users',userRouter);
 const startServer = async () => {
     try{
         connectDB(process.env.MONGODB_URL)
-        App.listen(8080, () => console.log('server listening on 8080'))
+        App.listen(3000, () => console.log('server listening on 3000'))
     }
     catch(error){
         console.error(error)
