@@ -1,31 +1,64 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Work+Sans:400,500,600,700&display=swap');
 
-#menu-container {
+/* #menu-container {
     position:relative;
     white-space:normal;
-    /* overflow: visible; */
+} */
 
-}
 
-body{
+.su-body{
   /* background: rgb(34,193,195); */
-  background: linear-gradient(135deg, rgb(34,193,195) 0%,     rgb(220, 39, 202) 100%);
-  background-size:auto;
+  background: linear-gradient(135deg, rgb(34,193,195) 0%,     rgb(220, 39, 202) 100%) !important;
+  background-size: cover;
   font-family: "work sans";
   overflow: visible;
 
 
-  transform: scale(0.80);
+  /* transform: scale(0.80); */
   /* transform-origin: 0 0; */
 }
+
 
 html{
   font-size: 100%;
 }
 
 
+.split-left {
+  background-image: linear-gradient(135deg, rgb(34,193,195) 0%,     rgb(220, 39, 202) 100%);
+  width: 55%;
+  position: absolute;
+  height: 100%;
+  left: 0;
+}
 
-#loginform{
+.split-left>img{
+  
+  padding: 13% 15%;
+  width: 450px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.split-right {
+  background-color: white;
+  width: 45%;
+  position: absolute;
+  height: 100%;
+  right: 0;
+}
+
+
+
+
+
+
+
+
+
+
+#signupform{
   /* max-width: 500px;
   min-width: 300px;
   min-height: 500px;
@@ -33,20 +66,16 @@ html{
   width: 55%;
   height: 630px;    /* 100 % */
   margin: 23px auto;
-  background-color: #FFFFFF;
+  /* background-color: #FFFFFF; */
   border-radius: 25px;
   text-align: center;
   overflow: visible ;
+  font-size: 15px;
+  /* text-decoration: none; border-bottom:1px solid red; */
 }
 
-#loginform>img{
 
-    padding: 5px 35%;
-    width: 150px;
-    display: block;
-}
-
-#headerTitle{
+#signup-headerTitle{
   text-align: center;
   font-family: 'open sans', sans-serif;
   padding: 2rem 0;
@@ -119,43 +148,6 @@ html{
 
 #button{
   padding-bottom: 1.5rem;
-}
-
-#facebookIcon{
-  background-image:      url("https://image.flaticon.com/icons/svg/145/145802.svg");
-  background-repeat: no-repeat;
-  width: 3rem;
-  height: 3rem;
-}
-
-#twitterIcon{
-  background-image: url("https://image.flaticon.com/icons/svg/145/145812.svg");
-  background-repeat: no-repeat;
-  width: 3rem;
-  height: 3rem;
-}
-
-#googleIcon{
-  background-image: url("https://image.flaticon.com/icons/svg/145/145804.svg");
-  background-repeat: no-repeat;
-  width: 3rem;
-  height: 3rem;
-}
-
-#iconGroup{
-  display: flex;
-  justify-content: center;
-  padding: 2rem 0;
-}
-
-#iconGroup a{
-  margin: 0 0.6rem;
-}
-
-#alternativeLogin {
-   text-align: center;
-   padding-top: 2rem;
-   margin-top: 1.5rem;
 }
 
 
