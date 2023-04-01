@@ -1,7 +1,8 @@
-import express from 'express'
+import express, { application } from 'express'
 import * as dotenv from 'dotenv'
 import cors from 'cors'
 import connectDB from './mongodb/connect.js'
+import userRouter from './routes/user.routes.js'
 
 
 dotenv.config()
@@ -13,6 +14,9 @@ App.use(express.json());
 App.get('/',(req,res) =>{
     res.send({message:'Hello'})
 })
+
+
+App.use('/api/v1/users',userRouter);
 
 const startServer = async () => {
     try{
