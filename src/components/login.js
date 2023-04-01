@@ -1,4 +1,5 @@
 import './login.css';
+import { Link } from 'react-router-dom';
 
 const img = require("./planitpro_logo.png");
 
@@ -9,7 +10,7 @@ const Login = (props) => {
     }
     return (
 
-        <>
+        <body class = "li-body">
         <div id="loginform">
             <br></br> 
             <img src={img} alt="PlanIt Pro logo"/>
@@ -17,17 +18,17 @@ const Login = (props) => {
             <Form />
             {/* <OtherMethods /> */}
             <p> Forgot Password?</p>
-            <p> Don't have an account? Sign Up</p>
+            <p> Don't have an account? <Link to= "/signup">Sign Up</Link></p>
         </div>
 
-        </>
+        </body>
 ); 
 }
 
 export default Login;       
 
 const FormHeader = props => (
-    <h1 id="headerTitle">{props.title}</h1>
+    <h1 id="login-headerTitle">{props.title}</h1>
 );
 
 
@@ -63,14 +64,14 @@ const FormInput = props => (
 //   </div>
 // );
 
-const Facebook = props => (
-  <a href="/" id="facebookIcon"></a>
-);
+// const Facebook = props => (
+//   <a href="/" id="facebookIcon"></a>
+// );
 
-const Twitter = props => (
-  <a href="/" id="twitterIcon"></a>
-);
+// const Twitter = props => (
+//   <a href="/" id="twitterIcon"></a>
+// );
 
-const Google = props => (
-  <a href="/" id="googleIcon"></a>
-);
+// const Google = props => (
+//   <a href="/" id="googleIcon"></a>
+// );

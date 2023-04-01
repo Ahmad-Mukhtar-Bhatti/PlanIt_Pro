@@ -1,52 +1,62 @@
 import './signup.css';
+import { useNavigate } from 'react-router-dom';
 
 import React, { Component } from "react";
-import { HashRouter as Router, Route, NavLink } from "react-router-dom";
-import SignUpForm from "./pages/SignUpForm";
-import SignInForm from "./pages/SignInForm";
 const img = require("./planitpro_logo.png");
+
 
 const Signup = (props) => {
     const userData = props.data; 
-    // const Signupfun = () => {
-    //     console.log("Sign handler")
-    // } 
+
+    const navigate = useNavigate();
+    function handleClick() {
+      navigate('/login');
+    }
 
     return (
-
-        <div id="loginform">
-            <br></br> 
+        <body class = "su-body">
+        <div class="split-left">
             <img src={img} alt="PlanIt Pro logo"/>
-            <FormHeader title="PLAN-IT PRO" />
-            <Form />
-            {/* <OtherMethods /> */}
-            <p> Signupp Password?</p>
-            <p> Don't have an account? Sign Up</p>
         </div>
-        
 
+        <div class="split-right">
+          <div id="signupform">
+            <br></br> 
+            <FormHeader title="CREATE ACCOUNT" />
+            <Form onClick={handleClick}/>
+        
+          </div>
+        </div>
+                
+        </body>
 
 ); 
 }
 
 export default Signup;       
 
+
 const FormHeader = props => (
-    <h1 id="headerTitle">{props.title}</h1>
+    <h1 id="signup-headerTitle">{props.title}</h1>
 );
 
 
 const Form = props => (
+
    <span>
      <FormInput description="Username" placeholder="Enter your username" type="text" />
-     <FormInput description="Password" placeholder="Enter your password" type="password"/>
-     <FormButton title="Log in"/>
+     <FormInput description="Email" placeholder="Enter your email" type="text" />
+     <FormInput description="Password" placeholder="Enter your password" type="text" />
+     <FormInput description="Re-Enter Password" placeholder="Re-enter your password" type="password"/>
+     <br></br><input type="checkbox" id="termsnconditions" name="tnx" value="Terms and Conditions"/>
+     <label for="termsnconditions"> I Agree with the Terms and Conditions</label><br></br>
+     <FormButton onClick={props.onClick}/>
    </span>
 );
 
 const FormButton = props => (
   <div id="button" class="row">
-    <button>{props.title}</button>
+    <button onClick={props.onClick}> Sign up </button>
   </div>
 );
 
@@ -68,14 +78,14 @@ const FormInput = props => (
 //   </div>
 // );
 
-const Facebook = props => (
-  <a href="/" id="facebookIcon"></a>
-);
+// const Facebook = props => (
+//   <a href="/" id="facebookIcon"></a>
+// );
 
-const Twitter = props => (
-  <a href="/" id="twitterIcon"></a>
-);
+// const Twitter = props => (
+//   <a href="/" id="twitterIcon"></a>
+// );
 
-const Google = props => (
-  <a href="/" id="googleIcon"></a>
-);
+// const Google = props => (
+//   <a href="/" id="googleIcon"></a>
+// );
