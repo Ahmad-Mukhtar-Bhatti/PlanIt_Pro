@@ -1,10 +1,10 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import { createUser,getAllUsers,getUserInfoByID } from '../controllers/user.controller.js';
-import { userModel} from '../mongodb/models/user.js';
+import  userModel from '../mongodb/models/user.js';
 
 
-const router=express.router();
+const router=express.Router();
 
 router.route('/').get(getAllUsers)
 router.route('/').get(createUser)

@@ -2,7 +2,7 @@ import express, { application } from 'express'
 import * as dotenv from 'dotenv'
 import cors from 'cors'
 import connectDB from './mongodb/connect.js'
-import userRouter from './routes/user.routes.js'
+import {userRouter} from './routes/user.routes.js'
 
 
 dotenv.config()
@@ -21,7 +21,7 @@ App.use('/api/v1/users',userRouter);
 const startServer = async () => {
     try{
         connectDB(process.env.MONGODB_URL)
-        App.listen(3000, () => console.log('server listening on 3000'))
+        App.listen(3010, () => console.log('server listening on 3010'))
     }
     catch(error){
         console.error(error)
