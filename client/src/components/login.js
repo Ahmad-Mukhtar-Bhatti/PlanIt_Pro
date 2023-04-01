@@ -10,7 +10,7 @@ const Login = (props) => {
     }
     return (
 
-        <body class = "li-body">
+      <body class = "li-body">
         <div id="loginform">
             <br></br> 
             <img src={img} alt="PlanIt Pro logo"/>
@@ -21,7 +21,7 @@ const Login = (props) => {
             <p> Don't have an account? <Link to= "/signup">Sign Up</Link></p>
         </div>
 
-        </body>
+      </body>
 ); 
 }
 
@@ -48,7 +48,7 @@ const FormButton = props => (
 
 const FormInput = props => (
   <div class="row">
-    <label>{props.description}</label>
+    <label> {props.description}</label>
     <input type={props.type} placeholder={props.placeholder}/>
   </div>  
 );

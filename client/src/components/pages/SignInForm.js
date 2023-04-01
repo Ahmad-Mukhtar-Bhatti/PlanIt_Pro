@@ -43,7 +43,7 @@ class SignInForm extends Component {
     console.log(this.state);
 
     try{
-      await axios.post("http://localhost:3000/login", this.state);
+      await axios.post("http://localhost:3010/login", this.state);
       alert("The login was successful");
 
     }catch(error){
@@ -55,7 +55,7 @@ class SignInForm extends Component {
   render() {
     return (
       <div className="formCenter">
-        <form className="formFields" onSubmit={this.handleSubmit}>
+        <form className="formFields" onSubmit={this.onSubmit}>
           <div className="formField">
             <label className="formFieldLabel" htmlFor="email">
               E-Mail Address
