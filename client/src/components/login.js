@@ -11,16 +11,21 @@ const Login = (props) => {
         console.log("Login handler")
     }
 
+    const [formData, setFormData] = useState({
+      name: 'x',
+      password: 'y',
+    });
+
     // Connecting the Login button with the backend
     const [data, setData] = useState(null);
     const navigate = useNavigate();
     const handleClick = () => {
-      fetch('http://localhost:3010/api/data', {
+      fetch('http://localhost:3010/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ message: 'Hello brother, I am connected!' })
+        body: JSON.stringify({formData})
       })
       .then(response => response.json())
       .then(data => setData(data.message))
@@ -36,7 +41,7 @@ const Login = (props) => {
             <br></br> 
             <img src={img} alt="PlanIt Pro logo"/>
             <FormHeader title="PLAN-IT PRO" />
-            <Form onClick={handleClick}/>
+            <Form onClick={handleClick} value = {formData}/>
             {/* <OtherMethods /> */}
             <p> Forgot Password?</p>
             <p> Don't have an account? <Link to= "/signup">Sign Up</Link></p>
@@ -55,8 +60,8 @@ const FormHeader = props => (
 
 const Form = props => (
    <span>
-     <FormInput description="Username" placeholder="Enter your username" type="text" />
-     <FormInput description="Password" placeholder="Enter your password" type="password"/>
+     <FormInput description="Username" placeholder="Enter your username" type="text" value = {props.value.name}/>
+     <FormInput description="Password" placeholder="Enter your password" type="password" value = {props.value.password}/>
      <FormButton title="Log in" onClick={props.onClick}/>
    </span>
 );
@@ -70,7 +75,7 @@ const FormButton = props => (
 const FormInput = props => (
   <div class="row">
     <label> {props.description}</label>
-    <input type={props.type} placeholder={props.placeholder}/>
+    <input type={props.type} placeholder={props.placeholder} value = {props.value}/>
   </div>  
 );
 

@@ -11,22 +11,18 @@ const App=express();
 App.use(cors());
 App.use(express.json());
 
-App.get('/login',(req,res) =>{
-    console.log("yoo");
-    res.send({message:'Hello'})
-})
+// App.get('/login',(req,res) =>{
+//     console.log("yoo");
+//     res.send({message:'Hello'})
+// })
 
-App.use(express.json());
+
 
 // define a route for the /api/data endpoint
-App.post('/api/data', (req, res) => {
-  // get the data from the request body
+App.post('/login', (req, res) => {
+
   const data = req.body;
-
-  // do something with the data
   console.log(data);
-
-  // send a response
   res.json({ message: 'Data received!' });
 });
 
