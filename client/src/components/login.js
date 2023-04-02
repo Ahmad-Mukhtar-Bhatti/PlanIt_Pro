@@ -2,6 +2,7 @@ import './login.css';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const img = require("./planitpro_logo.png");
 
@@ -14,18 +15,21 @@ const Login = (props) => {
     // Connecting the Login button with the backend
     const [data, setData] = useState(null);
     const navigate = useNavigate();
-    const handleClick = () => {
-      fetch('http://localhost:3010/api/data', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ message: 'Hello brother, I am connected!' })
-      })
-      .then(response => response.json())
-      .then(data => setData(data.message))
-      .catch(error => console.error(error));
-    };
+
+    const handleClick = async(event) => {
+      event.preventDefault();
+      console.log("The form was submitted with the following data:");
+      // console.log(this.state);
+  
+      try{
+        await axios.post("http://localhost:3010/api/data", {message: 'Hello brother, I am connected!'});
+        alert("The login was successful");
+  
+      }catch(error){
+        console.log("An error occurred")
+      }
+  
+    }
 
 
 
