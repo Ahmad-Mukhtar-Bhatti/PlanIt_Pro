@@ -8,10 +8,6 @@ import {useCookies} from 'react-cookie'
 const img = require("./planitpro_logo.png");
 
 const Login = (props) => {
-  const userData = props.data;
-  const Logininto = () => {
-    console.log("Login handler");
-  };
 
   // Connecting the Login button with the backend
 
