@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
+import {useCookies} from 'react-cookie'
 
 const img = require("./planitpro_logo.png");
 
@@ -13,16 +14,29 @@ const Login = (props) => {
   };
 
   // Connecting the Login button with the backend
-  const [data, setData] = useState(null);
+
   const navigate = useNavigate();
+  const [,setCookies]=useCookies('access_token')
 
   const handleClick = async (username, password) => {
     console.log("The form was submitted with the following data:");
     console.log({ username, password });
 
     try {
-      await axios.post("http://localhost:3010/api/data", { username, password });
-      alert("The login was successful");
+      const response=await axios.post("http://localhost:3010/login", { username, password });
+     
+      setCookies(response.data.token);
+      window.localStorage.setItem("User_ID", response.data.userID);
+
+      console.log(response.data.message);
+
+      if(response.data.message != "invalid"){
+        navigate("/home")
+      }
+      else{
+        alert("invalid Credentials, Please try again ")
+      }
+      
     } catch (error) {
       console.log("An error occurred");
     }
