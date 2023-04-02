@@ -33,8 +33,9 @@ const Login = (props) => {
       if(response.data.message != "invalid"){
         navigate("/home")
       }
+
       else{
-        alert("invalid Credentials, Please try again ")
+        alert("invalid Credentials, Please try again later")
       }
       
     } catch (error) {
