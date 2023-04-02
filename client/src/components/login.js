@@ -1,11 +1,16 @@
-import './login.css';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import "./login.css";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
 
 const img = require("./planitpro_logo.png");
 
 const Login = (props) => {
+  const userData = props.data;
+  const Logininto = () => {
+    console.log("Login handler");
+  };
     const userData = props.data; 
     const Logininto = () => {
         console.log("Login handler")
@@ -16,6 +21,21 @@ const Login = (props) => {
       password: 'y',
     });
 
+  // Connecting the Login button with the backend
+  const [data, setData] = useState(null);
+  const navigate = useNavigate();
+
+  const handleClick = async (username, password) => {
+    console.log("The form was submitted with the following data:");
+    console.log({ username, password });
+
+    try {
+      await axios.post("http://localhost:3010/api/data", { username, password });
+      alert("The login was successful");
+    } catch (error) {
+      console.log("An error occurred");
+    }
+  };
     // Connecting the Login button with the backend
     const [data, setData] = useState(null);
     const navigate = useNavigate();
@@ -34,30 +54,63 @@ const Login = (props) => {
 
 
 
-    return (
+  return (
+    <body class="li-body">
+      <div id="loginform">
+        <br></br>
+        <img src={img} alt="PlanIt Pro logo" />
+        <FormHeader title="PLAN-IT PRO" />
+        <Form onClick={handleClick} value = {formData} />
+        {/* <OtherMethods /> */}
+        <p> Forgot Password?</p>
+        <p>
+          {" "}
+          Don't have an account? <Link to="/signup">Sign Up</Link>
+        </p>
+      </div>
+    </body>
+  );
+};
 
-      <body class = "li-body">
-        <div id="loginform">
-            <br></br> 
-            <img src={img} alt="PlanIt Pro logo"/>
-            <FormHeader title="PLAN-IT PRO" />
-            <Form onClick={handleClick} value = {formData}/>
-            {/* <OtherMethods /> */}
-            <p> Forgot Password?</p>
-            <p> Don't have an account? <Link to= "/signup">Sign Up</Link></p>
-        </div>
+export default Login;
 
-      </body>
-); 
-}
+const FormHeader = (props) => <h1 id="login-headerTitle">{props.title}</h1>;
 
-export default Login;       
+const Form = (props) => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-const FormHeader = props => (
-    <h1 id="login-headerTitle">{props.title}</h1>
-);
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
 
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
 
+  return (
+    <span>
+      <FormInput
+        description="Username"
+        placeholder="Enter your username"
+        type="text"
+        value={username}
+        onChange={handleUsernameChange}
+      />
+      <FormInput
+        description="Password"
+        placeholder="Enter your password"
+        type="password"
+        value={password}
+        onChange={handlePasswordChange}
+      />
+      <FormButton
+        title="Log in"
+        onClick={() => props.onClick(username, password)}
+      />
+    </span>
+  );
+};
 const Form = props => (
    <span>
      <FormInput description="Username" placeholder="Enter your username" type="text" value = {props.value.name}/>
@@ -66,38 +119,18 @@ const Form = props => (
    </span>
 );
 
-const FormButton = props => (
+const FormButton = (props) => (
   <div id="button" class="row">
     <button onClick={props.onClick}>{props.title}</button>
   </div>
 );
 
-const FormInput = props => (
+const FormInput = (props) => (
   <div class="row">
     <label> {props.description}</label>
+    <input type={props.type} placeholder={props.placeholder} value={props.value} onChange={props.onChange}/>
+  </div>
     <input type={props.type} placeholder={props.placeholder} value = {props.value}/>
   </div>  
 );
 
-// const OtherMethods = props => (
-//   <div id="alternativeLogin">
-//     <label>Or sign in with:</label>
-//     <div id="iconGroup">
-//       <Facebook />
-//       <Twitter />
-//       <Google />
-//     </div>
-//   </div>
-// );
-
-// const Facebook = props => (
-//   <a href="/" id="facebookIcon"></a>
-// );
-
-// const Twitter = props => (
-//   <a href="/" id="twitterIcon"></a>
-// );
-
-// const Google = props => (
-//   <a href="/" id="googleIcon"></a>
-// );
