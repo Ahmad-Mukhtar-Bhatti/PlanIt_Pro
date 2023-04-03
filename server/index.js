@@ -17,6 +17,10 @@ App.get('/',(req,res) =>{
 
 App.use('/login',userRouter);
 
+App.get('/signup',(req,res) =>{
+    res.send({message:'Hello'})
+})
+
 const startServer = async () => {
     try{
         connectDB(process.env.MONGODB_URL)
