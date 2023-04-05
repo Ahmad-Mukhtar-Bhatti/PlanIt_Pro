@@ -82,7 +82,8 @@
 }
 .atom-input-container-sizes,
 .atom-input-container-sizes1 {
-  border: 1px solid var(--gray-100);
+  /* border: 1px solid var(--gray-100); */
+  border: 4px solid #6f00ff;
   font-weight: 500;
   font-family: var(--font-inter);
   font-size: var(--font-size-sm);
@@ -90,7 +91,8 @@
   position: absolute;
   top: 174px;
   left: 435px;
-  border-radius: var(--br-xl);
+  /* border-radius: var(--br-xl); */
+  border-radius: 20px;
   box-shadow: var(--light-elevation-200);
   box-sizing: border-box;
   width: 560px;
@@ -98,7 +100,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: var(--padding-5xs);
+  /* padding: var(--padding-5xs); */
+  padding: 8px;
   align-items: flex-start;
   justify-content: center;
 }

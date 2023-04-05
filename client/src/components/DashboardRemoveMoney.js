@@ -33,7 +33,7 @@ const DashboardRemoveMoney = () => {
         type="number"
         placeholder="Enter amount here"
       />
-      <Stack className="atom-input-container-sizes1" w="560px">
+      <Stack className="remove-money-atom-input-container-sizes1" w="560px">
         <Select
           variant="outline"
           placeholder="Select option"
