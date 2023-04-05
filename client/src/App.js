@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/login';
 import Signup from './components/signup';
 import Home from './components/home';
+import DashboardAddMoney from './components/DashboardAddMoney';
+import DashboardRemoveMoney from './components/DashboardRemoveMoney';
 
 
 function App() {
@@ -15,6 +17,11 @@ function App() {
           <Route path = "/login" element = {<Login/>} />
           <Route path = "/signup" element = {<Signup/>} />
           <Route path = "/home" element = {<Home/>} />
+          {/*  */}
+          <Route path = "/addmoney" element = {<DashboardAddMoney/>} />
+          <Route path = "/removemoney" element = {<DashboardRemoveMoney/>} />
+
+          
         </Routes>
       </Router>
     </>

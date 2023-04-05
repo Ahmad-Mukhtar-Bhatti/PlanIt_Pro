@@ -1,0 +1,579 @@
+.bg-01-1-icon,
+.top-bar-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 70px;
+}
+.bg-01-1-icon {
+  width: 1440px;
+  height: 1024px;
+  object-fit: cover;
+}
+.dashboard-home-screen-child {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  background-color: #251f47;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.16);
+  width: 1441px;
+  height: 72px;
+}
+.home {
+  position: absolute;
+  top: 24px;
+  left: 694px;
+  font-size: 16px;
+  display: inline-block;
+  font-family: Poppins;
+  width: 57px;
+  height: 25px;
+}
+.group-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 31px;
+  background-color: #4b3c9d;
+  width: 1191px;
+  height: 238px;
+}
+.group-item,
+.qaboos-ali-khan {
+  position: absolute;
+  top: 136px;
+  left: 675.09px;
+  width: 120.86px;
+  height: 25px;
+}
+.qaboos-ali-khan {
+  top: 167px;
+  left: 474.09px;
+  line-height: 20px;
+  display: inline-block;
+  width: 306.95px;
+  height: 28px;
+}
+.rectangle-parent {
+  position: absolute;
+  top: 93px;
+  left: 106px;
+  width: 1191px;
+  height: 238px;
+  font-size: 36px;
+}
+.available-balance,
+.pkr-3578 {
+  position: absolute;
+  display: inline-block;
+}
+.pkr-3578 {
+  top: 206px;
+  left: 117px;
+  font-size: 60px;
+  letter-spacing: -0.01em;
+  line-height: 34px;
+  font-weight: 600;
+  width: 319px;
+  height: 66px;
+}
+.available-balance {
+  top: 140px;
+  left: 123px;
+  font-size: 36px;
+  line-height: 20px;
+  width: 366px;
+  height: 65px;
+}
+.dashboard-home-screen-item {
+  position: absolute;
+  top: 346px;
+  left: 896px;
+  border-radius: 33px;
+  background-color: #4b3c9d;
+  width: 403px;
+  height: 319px;
+}
+.label,
+.label1 {
+  cursor: pointer;
+  left: 934px;
+  color: #000;
+  width: 10px;
+  height: 10px;
+}
+.label {
+  position: absolute;
+  top: 552px;
+  display: inline-block;
+}
+.label1 {
+  top: 542px;
+}
+.buy-groceries,
+.go-for-a,
+.label1,
+.label2 {
+  position: absolute;
+  display: inline-block;
+}
+.label2 {
+  cursor: pointer;
+  top: 586px;
+  left: 934px;
+  color: #000;
+  width: 10px;
+  height: 36px;
+}
+.buy-groceries,
+.go-for-a {
+  top: 519px;
+  left: 978px;
+  width: 193px;
+  height: 29px;
+}
+.buy-groceries {
+  top: 477px;
+  width: 202px;
+}
+.dashboard-home-screen-inner,
+.rectangle-icon {
+  position: absolute;
+  top: 522px;
+  left: 921px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.rectangle-icon {
+  top: 479px;
+}
+.rectangle-button {
+  cursor: pointer;
+  border: 4px solid rgba(154, 120, 181, 0.97);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 573px;
+  left: 985px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 254px;
+  height: 78px;
+}
+.to-do-list {
+  position: absolute;
+  top: 590px;
+  left: 1024px;
+  font-size: 35px;
+  display: inline-block;
+  width: 201px;
+  height: 43px;
+}
+.rectangle-div {
+  position: absolute;
+  top: 351px;
+  left: 460px;
+  border-radius: 20px;
+  background-color: #4b3c9d;
+  width: 154px;
+  height: 142px;
+  mix-blend-mode: normal;
+}
+.subtract-icon {
+  position: relative;
+  width: 76px;
+  height: 76px;
+}
+.add-round-fill {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 358px;
+  left: 487px;
+  width: 100px;
+  height: 100px;
+  mix-blend-mode: multiply;
+}
+.credit {
+  position: absolute;
+  top: 455px;
+  left: 515px;
+  font-size: 18px;
+  font-family: Poppins;
+  display: inline-block;
+  width: 69px;
+  height: 23px;
+}
+.dashboard-home-screen-child1 {
+  position: absolute;
+  top: 350px;
+  left: 659px;
+  border-radius: 20px;
+  background-color: #4b3c9d;
+  width: 154px;
+  height: 142px;
+  mix-blend-mode: normal;
+}
+.subtract-icon1 {
+  position: relative;
+  left: 45px;
+  width: 74.82px;
+  height: 75px;
+}
+.remove-fill {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 9.77%;
+  width: 6.93%;
+  top: 34.96%;
+  right: 45.47%;
+  bottom: 55.27%;
+  left: 47.61%;
+  mix-blend-mode: multiply;
+}
+.debit {
+  position: absolute;
+  top: 452px;
+  left: 712px;
+  font-size: 18px;
+  font-family: Poppins;
+  display: inline-block;
+  width: 53px;
+  height: 23px;
+}
+.subtract-icon2 {
+  position: relative;
+  width: 84.38px;
+  height: 106.67px;
+}
+.remove-fill1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 13.89%;
+  width: 7.81%;
+  top: 49.97%;
+  right: 44.97%;
+  bottom: 36.14%;
+  left: 47.22%;
+  mix-blend-mode: multiply;
+}
+.dashboard-home-screen-child2 {
+  position: absolute;
+  top: 520px;
+  left: 460px;
+  border-radius: 20px;
+  background-color: #4b3c9d;
+  width: 154px;
+  height: 142px;
+  mix-blend-mode: normal;
+}
+.view-history {
+  position: absolute;
+  top: 630px;
+  left: 489px;
+  font-size: 18px;
+  font-family: Poppins;
+  display: inline-block;
+  width: 122px;
+  height: 28px;
+}
+.view-child,
+.view-item {
+  position: absolute;
+  height: 33.33%;
+  width: 33.33%;
+  top: 33.33%;
+  right: 33.33%;
+  bottom: 33.33%;
+  left: 33.33%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.view-item {
+  height: 52%;
+  width: 76.57%;
+  top: 24%;
+  right: 11.72%;
+  bottom: 24%;
+  left: 11.72%;
+}
+.view {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 523px;
+  left: 487px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 100px;
+  height: 100px;
+  mix-blend-mode: multiply;
+}
+.dashboard-home-screen-child3 {
+  position: absolute;
+  top: 520px;
+  left: 659px;
+  border-radius: 20px;
+  background-color: #4b3c9d;
+  width: 154px;
+  height: 142px;
+  mix-blend-mode: normal;
+}
+.get-predictions {
+  position: absolute;
+  top: 630px;
+  left: 680px;
+  font-size: 18px;
+  font-family: Poppins;
+  display: inline-block;
+  width: 143px;
+  height: 27px;
+}
+.subtract-icon3 {
+  position: relative;
+  width: 58.33px;
+  height: 73.77px;
+}
+.d-box-fill,
+.dashboard-home-screen-child4 {
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+}
+.d-box-fill {
+  border: 0;
+  top: 522px;
+  left: 687px;
+  width: 100px;
+  height: 100px;
+  mix-blend-mode: multiply;
+}
+.dashboard-home-screen-child4 {
+  border: 4px solid rgba(154, 120, 181, 0.97);
+  top: 378px;
+  left: 106px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 254px;
+  height: 78px;
+}
+.edit-account {
+  position: absolute;
+  top: 403px;
+  left: 159px;
+  font-size: 24px;
+  display: inline-block;
+  width: 149px;
+  height: 28px;
+}
+.checklist1 {
+  margin: 0;
+}
+.checklist {
+  position: absolute;
+  top: 373px;
+  left: 921px;
+  font-size: 40px;
+  display: inline-block;
+  width: 353px;
+  height: 47px;
+}
+.dashboard-home-screen-child5 {
+  position: absolute;
+  top: 439px;
+  left: 921px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.pay-bills {
+  position: absolute;
+  top: 435px;
+  left: 978px;
+  display: inline-block;
+  width: 125px;
+  height: 29px;
+}
+.dashboard-home-screen-child6 {
+  cursor: pointer;
+  border: 4px solid rgba(154, 120, 181, 0.97);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 556px;
+  left: 106px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 254px;
+  height: 78px;
+}
+.submit-complaint {
+  position: absolute;
+  top: 581px;
+  left: 145px;
+  font-size: 24px;
+  display: inline-block;
+  width: 327px;
+  height: 43px;
+}
+.dashboard-home-screen-child7 {
+  cursor: pointer;
+  border: 4px solid rgba(154, 120, 181, 0.97);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 467px;
+  left: 106px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 254px;
+  height: 78px;
+}
+.help {
+  position: absolute;
+  top: 492px;
+  left: 204px;
+  font-size: 24px;
+  display: inline-block;
+  width: 53px;
+  height: 28px;
+}
+.image-2-icon,
+.se-logog-photoaidcom-cropped-1 {
+  position: absolute;
+  top: 119px;
+  left: 645px;
+  width: 127px;
+  height: 109px;
+  object-fit: cover;
+}
+.se-logog-photoaidcom-cropped-1 {
+  top: 9px;
+  left: 13px;
+  width: 55px;
+  height: 55px;
+}
+.expense-dinner,
+.income-salary {
+  position: absolute;
+  top: 241px;
+  left: 996px;
+  font-size: 20px;
+  font-family: Poppins;
+  display: inline-block;
+  width: 275px;
+  height: 17px;
+}
+.income-salary {
+  top: 206px;
+  height: 18px;
+}
+.expense-lauren,
+.iconoirreceive-dollars {
+  position: absolute;
+  top: 202px;
+  left: 910px;
+  width: 69px;
+  height: 41px;
+}
+.expense-lauren {
+  top: 172px;
+  left: 996px;
+  font-size: 20px;
+  font-family: Poppins;
+  display: inline-block;
+  width: 266px;
+  height: 17px;
+}
+.iconoirsend-dollars,
+.iconoirsend-dollars1 {
+  position: absolute;
+  top: 163px;
+  left: 909px;
+  width: 70px;
+  height: 49px;
+}
+.iconoirsend-dollars1 {
+  top: 234px;
+}
+.latest-transactions {
+  position: absolute;
+  top: 139px;
+  left: 910px;
+  font-size: 20px;
+  font-family: Poppins;
+  display: inline-block;
+  width: 431px;
+  height: 23px;
+}
+.wallet-alt-icon,
+.wallet-alt-icon1 {
+  position: absolute;
+  top: 203px;
+  left: 903px;
+  width: 40px;
+  height: 40px;
+  mix-blend-mode: multiply;
+}
+.wallet-alt-icon1 {
+  top: 238px;
+}
+.dashboard-home-screen-child8 {
+  cursor: pointer;
+  border: 4px solid rgba(154, 120, 181, 0.97);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 109px;
+  left: 1109px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 114px;
+  height: 31px;
+}
+.logout {
+  position: absolute;
+  top: 109px;
+  left: 1124px;
+  font-size: 24px;
+  display: inline-block;
+  width: 81px;
+  height: 16px;
+}
+.wallet-alt-icon2 {
+  position: absolute;
+  top: 168px;
+  left: 903px;
+  width: 40px;
+  height: 40px;
+  mix-blend-mode: multiply;
+}
+.dashboard-home-screen {
+  position: relative;
+  background: linear-gradient(135deg, rgb(34,193,195) 0%,     rgb(220, 39, 202) 100%) !important;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: 30px;
+  color: #fff;
+  font-family: Inter;
+}
