@@ -11,13 +11,13 @@ const DashboardRemoveMoney = () => {
       <img className="top-bar-icon" alt="" src={topbar} />
       <img className="bg-01-1-icon" alt="" src={background} />
       <div className="dashboard-remove-money-child" />
-      <b className="remove-money">REMOVE MONEY</b>
+      <b className="remove-money">Debit</b>
       <div className="dashboard-remove-money-item" />
       <button className="dashboard-remove-money-inner" />
-      <div className="remove-money1">REMOVE MONEY</div>
+      <div className="remove-money1">Remove Money</div>
       
       <div className="enter-the-amount">
-      <p style={{textAlign: "center", lineHeight: "10px"}}> Enter the amount you want to Remove:</p>
+      <p style={{textAlign: "center", lineHeight: "10px"}}> Enter Debit Amount:</p>
       </div>
 
       <img
@@ -26,7 +26,7 @@ const DashboardRemoveMoney = () => {
         src={logo}
       />
 
-      <div className="purpose">Purpose:</div>
+      <div className="purpose" style={{ paddingLeft: '25px' }}>Purpose:</div>
       
       <input
         className="atom-input-container-sizes"

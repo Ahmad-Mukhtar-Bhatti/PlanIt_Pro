@@ -551,12 +551,16 @@
 }
 .logout {
   position: absolute;
-  top: 109px;
+  top: 114px;
   left: 1124px;
-  font-size: 24px;
+  font-size: 18px;
   display: inline-block;
   width: 81px;
   height: 16px;
+  align-items: center;
+  text-align: center;
+
+
 }
 .wallet-alt-icon2 {
   position: absolute;

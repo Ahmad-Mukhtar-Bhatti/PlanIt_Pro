@@ -1,5 +1,7 @@
 import "./DashboardHomeScreen.css";
 import React from 'react';
+import { Link } from "react-router-dom";
+
 const img = require("./home/se-logogphotoaidcomcropped-1@2x.png");
 const img2 = require("./home/topbar.svg");
 const img3 = require("./home/bg01-1@2x.png");
@@ -49,9 +51,16 @@ const DashboardHomeScreen = () => {
         <button className="add-round-fill">
             <img className="subtract-icon" alt="" src={img15} />
         </button>
-        <div className="credit"> Credit</div>
+
+        <div className="credit">
+            <Link to="/addmoney" style={{textDecoration: 'none', color: "white"}}>Credit</Link>
+        </div>
+        
         <div className="dashboard-home-screen-child1" />
-        <div className="debit">Debit</div>
+        <div className="debit">
+            <Link to="/removemoney" style={{textDecoration: 'none', color: "white"}}>Debit</Link>
+        </div>
+
         <button className="remove-fill">
             <img className="subtract-icon1" alt="" src={img5} />
         </button>
@@ -109,7 +118,12 @@ const DashboardHomeScreen = () => {
         <img className="wallet-alt-icon" alt="" src={img14} />
         <img className="wallet-alt-icon1" alt="" src={img14} />
         <button className="dashboard-home-screen-child8" />
-        <div className="logout">Logout</div>
+        
+        <div className="logout">
+            {/* add someway to remove login access */}
+            <Link to="/login" style={{textDecoration: 'none', color:"white"}}>Logout</Link>
+        </div>
+        
         <img className="wallet-alt-icon2" alt="" src={img14} />
         </div>
     </div>

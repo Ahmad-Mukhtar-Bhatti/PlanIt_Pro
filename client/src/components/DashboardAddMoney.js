@@ -11,12 +11,12 @@ const DashboardAddMoney = () => {
       <img className="top-bar-icon" alt="" src={topbar} />
       <img className="bg-01-1-icon" alt="" src={background} />
       <div className="dashboard-add-money-child" />
-      <b className="add-money">ADD MONEY</b>
+      <b className="add-money">Credit</b>
       <div className="dashboard-add-money-item" />
       <button className="dashboard-add-money-inner" />
-      <div className="add-money1">ADD MONEY</div>
+      <div className="add-money1">Add Money</div>
       <div className="enter-the-amount"> 
-        <p style={{textAlign: "center", lineHeight: "10px"}}>Enter the amount you want to Add:</p> 
+        <p style={{textAlign: "center", lineHeight: "10px"}}>Enter Credit Amount:</p> 
     </div>
       <img
         className="se-logog-photoaidcom-cropped-1"
