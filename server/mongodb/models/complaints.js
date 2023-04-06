@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const complaintSchema = new mongoose.Schema({
-    U_id:{type: String, required: true,ref: 'User'},
-    Complaint_id:{type: Number, required: true},
+    username:{type: String, required: true,ref: 'User'},
+    Complaint_id:{type: Number, required: true,unique: true},
     Description:{type: String, required: false},
 })
 

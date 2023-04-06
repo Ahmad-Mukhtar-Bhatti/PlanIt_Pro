@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const budgetSchema = new mongoose.Schema({
-    U_id:{type: String, required: true,ref: 'User'},
+    username:{type: String, required: true,ref: 'User'},
     balance:{type: Number, required: true},
     Target_amnt:{type: Number, required: true},
     Suggestions:{type: String, required: false}
