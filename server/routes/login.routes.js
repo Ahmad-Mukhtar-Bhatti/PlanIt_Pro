@@ -2,6 +2,7 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 import { createUser,getAllUsers,getUserInfoByID } from '../controllers/user.controller.js';
 import  userModel from '../mongodb/models/user.js';
+import bcrypt from 'bcryptjs/dist/bcrypt.js';
 
 
 const router=express.Router();
@@ -25,7 +26,7 @@ router.post('/', async (req, res) => {
         return res.json({ message :"invalid"})
     }
 
-    if(password !== user.password){
+    if(! (await bcrypt.compare(password, user.password))){
         return res.json({ message : "invalid"})
     }
 

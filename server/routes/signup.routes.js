@@ -20,7 +20,7 @@ router.post('/', async (req, res) => {
     }
 
     const hasher= await bcrypt.hash(password,10);
-    const newUser= new userModel({username,password:hasher});
+    const newUser= new userModel({name,username,password:hasher,rank:"User"});
 
     await newUser.save()
 
