@@ -29,7 +29,6 @@ const Login = (props) => {
       if(response.data.message != "invalid"){
         navigate("/home")
       }
-
       else{
         alert("invalid Credentials, Please try again later")
       }
@@ -40,6 +39,10 @@ const Login = (props) => {
   };
 
   return (
+    <>
+    <head>
+    <link rel="icon" href={img} />
+    </head>
     <body class="li-body">
       <div id="loginform">
         <br></br>
@@ -54,6 +57,7 @@ const Login = (props) => {
         </p>
       </div>
     </body>
+    </>
   );
 };
 
