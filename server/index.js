@@ -2,7 +2,7 @@ import express, { application } from 'express'
 import * as dotenv from 'dotenv'
 import cors from 'cors'
 import connectDB from './mongodb/connect.js'
-import {userRouter} from './routes/user.routes.js'
+import {loginRouter} from './routes/login.routes.js'
 
 
 dotenv.config()

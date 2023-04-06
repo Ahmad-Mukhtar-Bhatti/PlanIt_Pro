@@ -6,9 +6,12 @@ import  userModel from '../mongodb/models/user.js';
 
 const router=express.Router();
 
-router.route('/').get(getAllUsers)
-router.route('/').get(createUser)
-router.route('/:id').get(getUserInfoByID)
+// router.route('/').get(getAllUsers)
+// router.route('/').get(createUser)
+// router.route('/:id').get(getUserInfoByID)
+
+
+
 
 
 router.post('/', async (req, res) => {
@@ -32,4 +35,4 @@ router.post('/', async (req, res) => {
 
 })
 
-export {router as userRouter};
+export {router as loginRouter};
