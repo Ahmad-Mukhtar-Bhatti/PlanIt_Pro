@@ -46,7 +46,10 @@ const DashboardHomeScreen = () => {
         />
         <img className="rectangle-icon" alt="" src={img4} />
         <button className="rectangle-button" />
-        <div className="to-do-list">To-Do List</div>
+        <div className="to-do-list">
+            <Link to="/ToDoList" style={{textDecoration: 'none', color: "white"}}>To-Do List</Link>
+        </div>
+
         <div className="rectangle-div" />
         <button className="add-round-fill">
             <img className="subtract-icon" alt="" src={img15} />
@@ -65,7 +68,9 @@ const DashboardHomeScreen = () => {
             <img className="subtract-icon1" alt="" src={img5} />
         </button>
         <div className="dashboard-home-screen-child2" />
+        
         <div className="view-history">View History</div>
+
         <button className="view">
             <img className="view-child" alt="" src={img6} />
             <img className="view-item" alt="" src={img7} />
@@ -77,9 +82,11 @@ const DashboardHomeScreen = () => {
         </button>
         <button className="dashboard-home-screen-child4" />
         <div className="edit-account">Edit Account</div>
+        
         <div className="checklist">
             <p className="checklist1">Checklist:</p>
         </div>
+        
         <img
             className="dashboard-home-screen-child5"
             alt=""

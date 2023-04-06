@@ -1,0 +1,231 @@
+.bg-01-1-icon,
+.top-bar-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 70px;
+}
+.bg-01-1-icon {
+  width: 1440px;
+  height: 1024px;
+  object-fit: cover;
+}
+.dashboard-to-do-list-child {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  background-color: #251f47;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.16);
+  width: 1440px;
+  height: 72px;
+}
+.d2-to-do-list {
+  position: absolute;
+  top: 28px;
+  left: 691px;
+  font-size: 16px;
+  display: inline-block;
+  font-family: var(--font-poppins);
+  width: 97px;
+  height: 25px;
+}
+.dashboard-to-do-list-item {
+  position: absolute;
+  top: 97px;
+  left: 36px;
+  border-radius: var(--br-14xl);
+  background-color: var(--color-darkslateblue-100);
+  width: 642px;
+  height: 586px;
+}
+.book-a-vacation,
+.to-do-list-buy-groceries,
+.call-a-friend,
+.to-do-list-go-for-a {
+  position: absolute;
+  top: 375px;
+  left: 117px;
+  display: inline-block;
+  width: 407px;
+  height: 29px;
+}
+.book-a-vacation,
+.to-do-list-buy-groceries,
+.to-do-list-go-for-a {
+  top: 324px;
+  width: 237px;
+}
+.to-do-list-buy-groceries,
+.to-do-list-go-for-a {
+  top: 276px;
+  width: 193px;
+}
+.to-do-list-buy-groceries {
+  top: 231px;
+  width: 202px;
+}
+.to-do-list-checklist1 {
+  margin: 0;
+}
+.to-do-list-checklist {
+  position: absolute;
+  top: 124px;
+  left: 61px;
+  font-size: var(--font-size-21xl);
+  display: inline-block;
+  width: 205px;
+  height: 47px;
+}
+.dashboard-to-do-list-inner,
+.to-do-list-rectangle-icon {
+  position: absolute;
+  top: 190px;
+  left: 61px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.to-do-list-rectangle-icon {
+  top: 234px;
+}
+.dashboard-to-do-list-child1,
+.dashboard-to-do-list-child2,
+.dashboard-to-do-list-child3 {
+  position: absolute;
+  top: 280px;
+  left: 61px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.dashboard-to-do-list-child2,
+.dashboard-to-do-list-child3 {
+  top: 326px;
+}
+.dashboard-to-do-list-child3 {
+  top: 377px;
+}
+.to-do-list-pay-bills {
+  position: absolute;
+  top: 186px;
+  left: 117px;
+  display: inline-block;
+  width: 125px;
+  height: 29px;
+}
+.to-do-list-rectangle-button {
+  cursor: pointer;
+  border: 4px solid rgba(154, 120, 181, 0.97);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 112px;
+  left: 410px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 254px;
+  height: 78px;
+}
+.edit {
+  position: absolute;
+  top: 137px;
+  left: 512px;
+  font-size: 24px;
+  display: inline-block;
+  width: 62px;
+  height: 28px;
+}
+.to-do-list-rectangle-div {
+  position: absolute;
+  top: 97px;
+  left: 790px;
+  border-radius: var(--br-14xl);
+  background-color: var(--color-darkslateblue-100);
+  width: 541px;
+  height: 586px;
+}
+.attend-social-event,
+.take-pet-to,
+.watch-a-movie {
+  position: absolute;
+  top: 391.5px;
+  left: 891.75px;
+  display: inline-block;
+  width: 316px;
+  height: 29px;
+}
+.take-pet-to,
+.watch-a-movie {
+  top: 326.5px;
+}
+.take-pet-to {
+  top: 257.75px;
+  left: 889.75px;
+}
+.dashboard-to-do-list-child4,
+.dashboard-to-do-list-child5,
+.dashboard-to-do-list-child6,
+.line-icon {
+  position: absolute;
+  height: 1.96%;
+  width: 1.41%;
+  top: 39.32%;
+  right: 41.02%;
+  bottom: 58.72%;
+  left: 57.56%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.dashboard-to-do-list-child4,
+.dashboard-to-do-list-child5,
+.dashboard-to-do-list-child6 {
+  top: 19.99%;
+  bottom: 78.06%;
+}
+.dashboard-to-do-list-child5,
+.dashboard-to-do-list-child6 {
+  top: 26.34%;
+  bottom: 71.71%;
+}
+.dashboard-to-do-list-child6 {
+  top: 32.78%;
+  bottom: 65.26%;
+}
+.do-laundry,
+.recent {
+  position: absolute;
+  top: 195px;
+  left: 892px;
+  display: inline-block;
+  width: 170px;
+  height: 29px;
+}
+.recent {
+  top: 117px;
+  left: 810px;
+  font-size: var(--font-size-21xl);
+  width: 158px;
+  height: 41px;
+}
+.se-logog-photoaidcom-cropped-1 {
+  position: absolute;
+  top: 9px;
+  left: 13px;
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+.dashboard-to-do-list {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}

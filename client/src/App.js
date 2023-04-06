@@ -4,8 +4,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/login';
 import Signup from './components/signup';
 import Home from './components/home';
+
+// dashboard 
 import DashboardAddMoney from './components/DashboardAddMoney';
 import DashboardRemoveMoney from './components/DashboardRemoveMoney';
+import DashboardToDoList from './components/DashboardToDoList';
+import DashboardEditToDoList from './components/DashboardEditToDoList';
 
 
 function App() {
@@ -17,9 +21,12 @@ function App() {
           <Route path = "/login" element = {<Login/>} />
           <Route path = "/signup" element = {<Signup/>} />
           <Route path = "/home" element = {<Home/>} />
-          {/*  */}
+          {/*  should add some kind of authentication to prevent users from 
+          jumping from site to site without user authentication*/}
           <Route path = "/addmoney" element = {<DashboardAddMoney/>} />
           <Route path = "/removemoney" element = {<DashboardRemoveMoney/>} />
+          <Route path = "/ToDoList" element = {<DashboardToDoList/>} />
+          <Route path = "/editToDoList" element = {<DashboardEditToDoList/>} />
 
           
         </Routes>
