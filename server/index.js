@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv'
 import cors from 'cors'
 import connectDB from './mongodb/connect.js'
 import {loginRouter} from './routes/login.routes.js'
-
+import {signupRouter} from './routes/signup.routes.js'
 
 dotenv.config()
 
@@ -15,11 +15,12 @@ App.get('/',(req,res) =>{
     res.send({message:'Hello'})
 })
 
-App.use('/login',userRouter);
+App.use('/login',loginRouter);
+App.use('/signup',signupRouter);
 
-App.get('/signup',(req,res) =>{
-    res.send({message:'Hello'})
-})
+// App.get('/signup',(req,res) =>{
+//     res.send({message:'Hello'})
+// })
 
 const startServer = async () => {
     try{

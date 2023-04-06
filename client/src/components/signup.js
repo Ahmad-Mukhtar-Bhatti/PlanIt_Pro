@@ -20,10 +20,14 @@ const Signup = (props) => {
 
     // Check if the username already exists
     try {
-      const usernameExists = await axios.post("http://localhost:3010/check-username", { username });
-      if (usernameExists.data.message === "Username already exists") {
-        alert("Username already exists");
+      const response = await axios.post("http://localhost:3010/signup", { username, name, password });
+      if (response.data.message === "Success") {
+        alert("User Created");
+        navigate("/login")
         return;
+      }
+      else{
+        alert("User exists");
       }
     } catch (error) {
       console.log("An error occurred while checking the username");
