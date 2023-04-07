@@ -1,11 +1,16 @@
 import { Stack, Select } from "@chakra-ui/react";
 import "./DashboardRemoveMoney.css";
+import {Link} from 'react-router-dom'
+
 
 const logo = require("./home/se-logogphotoaidcomcropped-1@2x.png");
 const background = require("./home/bg01-1@2x.png");
 const topbar = require("./home/topbar.svg");
 
 const DashboardRemoveMoney = () => {
+  function handleSaveChanges() {
+    alert("Removed Money!");
+  }
   return (
     <div className="dashboard-remove-money">
       <img className="top-bar-icon" alt="" src={topbar} />
@@ -14,8 +19,17 @@ const DashboardRemoveMoney = () => {
       <b className="remove-money">Debit</b>
       <div className="dashboard-remove-money-item" />
       <button className="dashboard-remove-money-inner" />
-      <div className="remove-money1">Remove Money</div>
-      
+
+      <div className="remove-money1">
+        <Link
+          to="/home"
+          style={{ textDecoration: "none", color: "white" }}
+          onClick={handleSaveChanges}
+        >
+          Remove Money
+        </Link>
+      </div>
+
       <div className="enter-the-amount">
       <p style={{textAlign: "center", lineHeight: "10px"}}> Enter Debit Amount:</p>
       </div>

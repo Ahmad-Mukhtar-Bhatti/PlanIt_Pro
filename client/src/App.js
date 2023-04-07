@@ -9,7 +9,11 @@ import Home from './components/home';
 import DashboardAddMoney from './components/DashboardAddMoney';
 import DashboardRemoveMoney from './components/DashboardRemoveMoney';
 import DashboardToDoList from './components/DashboardToDoList';
+import DashboardPredictions from './components/DashboardPredictions';
+
+// to do list options
 import DashboardEditToDoList from './components/DashboardEditToDoList';
+import DashboardAddNewTask from './components/DashboardAddNewTask';
 
 
 function App() {
@@ -26,7 +30,12 @@ function App() {
           <Route path = "/addmoney" element = {<DashboardAddMoney/>} />
           <Route path = "/removemoney" element = {<DashboardRemoveMoney/>} />
           <Route path = "/ToDoList" element = {<DashboardToDoList/>} />
+          <Route path = "/getPredictions" element = {<DashboardPredictions/>} />
+
+
           <Route path = "/editToDoList" element = {<DashboardEditToDoList/>} />
+          <Route path = "/addNewTask" element = {<DashboardAddNewTask/>} />
+          
 
           
         </Routes>

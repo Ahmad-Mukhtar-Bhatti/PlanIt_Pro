@@ -137,6 +137,15 @@
   width: 62px;
   height: 28px;
 }
+.home-goer {
+  position: absolute;
+  top: 110px;
+  left: 1330px;
+  font-size: 22px;
+  display: inline-block;
+  width: 62px;
+  height: 28px;
+}
 .to-do-list-rectangle-div {
   position: absolute;
   top: 97px;

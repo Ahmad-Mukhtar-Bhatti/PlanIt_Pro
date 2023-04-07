@@ -60,7 +60,11 @@ const DashboardEditToDoList = () => {
       <button className="editt-remove4">Remove</button>
       <button className="editt-done4">Done</button>
       <button className="editt-rectangle-button" />
-      <div className="editt-add-new-task">Add New Task</div>
+      
+      <div className="editt-add-new-task">
+        <Link to="/addNewTask" style={{ textDecoration: "none", color: "white" }}> Add New Task </Link>
+      </div>
+
       <button className="editt-dashboard-edit-to-do-list-child4" />
       <div className="editt-adjust-tasks">Adjust Tasks</div>
       <button className="editt-dashboard-edit-to-do-list-child5" />

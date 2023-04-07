@@ -19,6 +19,10 @@ const img14 = require("./home/wallet-alt.svg");
 const img15 = require("./home/subtract.svg");
 
 const DashboardHomeScreen = () => {
+    function handleSaveChanges() {
+        alert("Successfully Logged Out!");
+      }
+
   return (
     <div className="body">
         <div className="dashboard-home-screen">
@@ -76,7 +80,11 @@ const DashboardHomeScreen = () => {
             <img className="view-item" alt="" src={img7} />
         </button>
         <div className="dashboard-home-screen-child3" />
-        <div className="get-predictions">Get Predictions</div>
+        
+        <div className="get-predictions">
+            <Link to="/getPredictions" style={{textDecoration: 'none', color: "white"}}>Get Predictions</Link>
+        </div>
+
         <button className="d-box-fill">
             <img className="subtract-icon2" alt="" src={img8} />
         </button>
@@ -127,9 +135,16 @@ const DashboardHomeScreen = () => {
         <button className="dashboard-home-screen-child8" />
         
         <div className="logout">
-            {/* add someway to remove login access */}
-            <Link to="/login" style={{textDecoration: 'none', color:"white"}}>Logout</Link>
-        </div>
+        {/* add someway to remove login access */}
+
+        <Link
+          to="/login"
+          style={{ textDecoration: "none", color: "white" }}
+          onClick={handleSaveChanges}
+        >
+          Logout
+        </Link>
+      </div>
         
         <img className="wallet-alt-icon2" alt="" src={img14} />
         </div>

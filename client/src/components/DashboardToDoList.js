@@ -13,6 +13,12 @@ const DashboardToDoList = () => {
     <div className="dashboard-to-do-list">
       <img className="top-bar-icon" alt="" src={topbar} />
       <img className="bg-01-1-icon" alt="" src={background} />
+
+      <div className="home-goer">
+            <Link to="/home" style={{textDecoration: 'none', color: "white"}}>Home Screen</Link>
+      </div>
+
+
       <div className="dashboard-to-do-list-child" />
       <b className="d2-to-do-list">TO-DO LIST</b>
       <div className="dashboard-to-do-list-item" />
