@@ -24,6 +24,12 @@ router.post('/', async (req, res) => {
         return res.json({ message :"invalid"})
     }
 
+    if (!budget) {
+        return res.json({ message :"invalid"})
+    }
+
+    
+
     // if(! (await bcrypt.compare(password, user.password))){
     //     return res.json({ message : "invalid"})
     // }
