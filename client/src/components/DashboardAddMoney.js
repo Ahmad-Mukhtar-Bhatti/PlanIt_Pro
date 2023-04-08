@@ -1,4 +1,6 @@
 import "./DashboardAddMoney.css";
+import {Link} from 'react-router-dom'
+
 
 const logo = require("./home/se-logogphotoaidcomcropped-1@2x.png");
 const background = require("./home/bg01-1@2x.png");
@@ -6,6 +8,10 @@ const topbar = require("./home/topbar.svg");
 
 
 const DashboardAddMoney = () => {
+  function handleSaveChanges() {
+    alert("Added Money!");
+  }
+
   return (
     <div className="dashboard-add-money">
       <img className="top-bar-icon" alt="" src={topbar} />
@@ -14,7 +20,17 @@ const DashboardAddMoney = () => {
       <b className="add-money">Credit</b>
       <div className="dashboard-add-money-item" />
       <button className="dashboard-add-money-inner" />
-      <div className="add-money1">Add Money</div>
+
+      <div className="add-money1">
+        <Link
+          to="/home"
+          style={{ textDecoration: "none", color: "white" }}
+          onClick={handleSaveChanges}
+        >
+          Add Money
+        </Link>
+      </div>
+
       <div className="enter-the-amount"> 
         <p style={{textAlign: "center", lineHeight: "10px"}}>Enter Credit Amount:</p> 
     </div>

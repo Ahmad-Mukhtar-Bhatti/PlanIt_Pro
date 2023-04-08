@@ -18,7 +18,7 @@ const router=express.Router();
 router.post('/', async (req, res) => {
     const {username, password} = req.body;
 
-    console.log("backed recieved",username,password);
+    console.log("login backed recieved",username,password);
 
     const user = await userModel.findOne({ username});
 

@@ -11,6 +11,7 @@ const Login = (props) => {
 
   // Connecting the Login button with the backend
 
+
   const navigate = useNavigate();
   const [,setCookies]=useCookies('access_token')
 
@@ -26,8 +27,8 @@ const Login = (props) => {
 
       console.log(response.data.message);
 
-      if(response.data.message != "invalid"){
-        navigate("/home")
+      if(response.data.message !== "invalid"){
+        navigate("/home", { state: { u_name: username} });
       }
       else{
         alert("invalid Credentials, Please try again later")
@@ -113,4 +114,3 @@ const FormInput = (props) => (
     <input type={props.type} placeholder={props.placeholder} value={props.value} onChange={props.onChange}/>
   </div>
 );
-
