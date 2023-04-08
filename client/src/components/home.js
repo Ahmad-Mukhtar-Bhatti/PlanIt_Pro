@@ -1,6 +1,11 @@
 import "./DashboardHomeScreen.css";
-import React from 'react';
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from "axios";
+import {useCookies} from 'react-cookie'
+import { useLocation } from 'react-router-dom';
+
 
 const img = require("./home/se-logogphotoaidcomcropped-1@2x.png");
 const img2 = require("./home/topbar.svg");
@@ -19,11 +24,44 @@ const img14 = require("./home/wallet-alt.svg");
 const img15 = require("./home/subtract.svg");
 
 const DashboardHomeScreen = () => {
-    function handleSaveChanges() {
-        alert("Successfully Logged Out!");
+
+    const navigate = useNavigate();
+    const [,setCookies]=useCookies('access_token')
+
+    const [name, setName] = useState("");
+    const [bal, setBal] = useState("");
+
+
+    const {state} = useLocation();
+    const { u_name} = state;
+
+  
+    const getName = async (username) => {
+      console.log("The form was submitted with the following data:");
+      console.log({ username });
+  
+      try {
+        const response= await axios.post("http://localhost:3010/home", { username});
+
+        console.log("dataaaa");
+       
+        // setCookies(response.data.token);
+        // window.localStorage.setItem("User_ID", response.data.userID);
+  
+        setName(response.data.uname);
+        setBal(response.data.userbalance);
+        // console.log(response.data);
+        
+      } catch (error) {
+        console.log("An error occurred");
       }
+    };
+
+    getName(u_name);
+    // console.log("yess");
 
   return (
+
     <div className="body">
         <div className="dashboard-home-screen">
         <img className="top-bar-icon" alt="" src={img2} />
@@ -33,9 +71,9 @@ const DashboardHomeScreen = () => {
         <div className="rectangle-parent">
             <div className="group-child" />
             <div className="group-item" />
-            <div className="qaboos-ali-khan">Qaboos Ali Khan</div>
+            <div className="qaboos-ali-khan">{name}</div>
         </div>
-        <div className="pkr-3578">PKR 3,578</div>
+        <div className="pkr-3578">PKR {bal}</div>
         <div className="available-balance">Available balance</div>
         <div className="dashboard-home-screen-item" />
         <label className="label">.</label>
@@ -80,11 +118,7 @@ const DashboardHomeScreen = () => {
             <img className="view-item" alt="" src={img7} />
         </button>
         <div className="dashboard-home-screen-child3" />
-        
-        <div className="get-predictions">
-            <Link to="/getPredictions" style={{textDecoration: 'none', color: "white"}}>Get Predictions</Link>
-        </div>
-
+        <div className="get-predictions">Get Predictions</div>
         <button className="d-box-fill">
             <img className="subtract-icon2" alt="" src={img8} />
         </button>
@@ -135,16 +169,9 @@ const DashboardHomeScreen = () => {
         <button className="dashboard-home-screen-child8" />
         
         <div className="logout">
-        {/* add someway to remove login access */}
-
-        <Link
-          to="/login"
-          style={{ textDecoration: "none", color: "white" }}
-          onClick={handleSaveChanges}
-        >
-          Logout
-        </Link>
-      </div>
+            {/* add someway to remove login access */}
+            <Link to="/login" style={{textDecoration: 'none', color:"white"}}>Logout</Link>
+        </div>
         
         <img className="wallet-alt-icon2" alt="" src={img14} />
         </div>
