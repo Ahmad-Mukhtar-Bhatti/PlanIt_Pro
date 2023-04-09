@@ -26,13 +26,15 @@ router.post('/', async (req, res) => {
 
     await newUser.save()
 
-    const newUserbudget= new BudgetModel({U_id:user._id,balance:0,Target_amnt:0});
+    const users = await userModel.findOne({ username});
+
+    const newUserbudget= new BudgetModel({U_id:users._id,balance:0,Target_amnt:0});
     await newUserbudget.save()
 
-    const newUsertodo= new TodoModel({U_id:user._id});
+    const newUsertodo= new TodoModel({U_id:users._id});
     await newUsertodo.save()
 
-    const newUsercomplaint= new ComplaintModel({U_id:user._id});
+    const newUsercomplaint= new ComplaintModel({U_id:users._id});
     await newUsercomplaint.save()
 
     const newUsersugg= new SuggestionModel({Description:"hello"});
