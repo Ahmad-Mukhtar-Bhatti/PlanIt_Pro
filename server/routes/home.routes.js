@@ -2,6 +2,8 @@ import express from 'express';
 import jwt from 'jsonwebtoken';
 import  userModel from '../mongodb/models/user.js';
 import  BudgetModel from '../mongodb/models/budget.js';
+import { ObjectId } from 'mongodb';
+
 
 
 const router=express.Router();
@@ -9,14 +11,16 @@ const router=express.Router();
 
 
 router.post('/', async (req, res) => {
-    const {username} = req.body;
+    const {userID} = req.body;
 
-    // console.log("home backed recieved",username);
+    const id=userID;
 
-    const user = await userModel.findOne({ username});
+    console.log("home backed recieved",id);
+
+    const user = await userModel.findOne({_id:id});
     // console.log(user.name);
 
-    const budget = await BudgetModel.findOne({username});
+    const budget = await BudgetModel.findOne({U_id:id});
     // console.log(budget.balance);
 
 
@@ -35,7 +39,8 @@ router.post('/', async (req, res) => {
     // }
 
     const token = jwt.sign({id:user._id},"secret");
-    res.json({ token ,uname:user.name, userbalance:budget.balance});
+    console.log(user.name,budget.balance)
+    res.json({ token ,name:user.name, balance:budget.balance});
 
 
 })

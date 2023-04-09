@@ -1,10 +1,11 @@
 import "./DashboardHomeScreen.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {useCookies} from 'react-cookie'
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
+import { getUserID } from "../hooks/useGetUserID.js";
 
 
 const img = require("./home/se-logogphotoaidcomcropped-1@2x.png");
@@ -32,33 +33,36 @@ const DashboardHomeScreen = () => {
     const [bal, setBal] = useState("");
 
 
-    const {state} = useLocation();
-    const { u_name} = state;
+    // const {state} = useLocation();
+    const userID = getUserID();
+    // const { u_name} = state;
 
-  
-    const getName = async (username) => {
-      console.log("The form was submitted with the following data:");
-      console.log({ username });
-  
-      try {
-        const response= await axios.post("http://localhost:3010/home", { username});
 
-        console.log("dataaaa");
-       
-        // setCookies(response.data.token);
-        // window.localStorage.setItem("User_ID", response.data.userID);
-  
-        setName(response.data.uname);
-        setBal(response.data.userbalance);
-        // console.log(response.data);
+
+    useEffect(()=>{
+      
+        const getbalance = async (userID) => {
+            console.log("The form was submitted with the following data:");
+            console.log(userID );
         
-      } catch (error) {
-        console.log("An error occurred");
-      }
-    };
+            try {
+              const response= await axios.post("http://localhost:3010/home", {userID});
+             
+              console.log(response.data);
+              setName(response.data.name)
+              setBal(response.data.balance)
+              
+            } catch (error) {
+              console.log("An error occurred");
+            }
+          };
 
-    getName(u_name);
-    // console.log("yess");
+          getbalance(userID)
+    },[])
+
+  
+    
+
 
     const logout = () => {
         setCookies("access_token","");
