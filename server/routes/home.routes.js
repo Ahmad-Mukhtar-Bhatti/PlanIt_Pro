@@ -39,8 +39,8 @@ router.post('/', async (req, res) => {
     // }
 
     const token = jwt.sign({id:user._id},"secret");
-    console.log(user.name,budget.balance)
-    res.json({ token ,name:user.name, balance:budget.balance});
+    console.log(user.name,budget.balance,user.pic)
+    res.json({ token ,name:user.name, balance:budget.balance,pic:user.pic});
 
 
 })

@@ -31,33 +31,32 @@ const DashboardHomeScreen = () => {
 
     const [name, setName] = useState("");
     const [bal, setBal] = useState("");
+    const [pic, setPic] = useState("");
 
-
-    // const {state} = useLocation();
     const userID = getUserID();
-    // const { u_name} = state;
+
 
 
 
     useEffect(()=>{
       
-        const getbalance = async (userID) => {
+        const getdata = async (userID) => {
             console.log("The form was submitted with the following data:");
             console.log(userID );
         
             try {
               const response= await axios.post("http://localhost:3010/home", {userID});
              
-              console.log(response.data);
               setName(response.data.name)
               setBal(response.data.balance)
+              setPic(response.data.pic)
               
             } catch (error) {
               console.log("An error occurred");
             }
           };
 
-          getbalance(userID)
+          getdata(userID)
     },[])
 
   
@@ -149,7 +148,7 @@ const DashboardHomeScreen = () => {
         <div className="submit-complaint">Submit Complaint</div>
         <button className="dashboard-home-screen-child7" />
         <div className="help">Help</div>
-        <img className="image-2-icon" alt="" src={img10} />
+        <img className="image-2-icon" alt="" src={pic} />
         <img
             className="se-logog-photoaidcom-cropped-1"
             alt=""
