@@ -17,7 +17,6 @@ const img6 = require("./home/ellipse-65.svg");
 const img7 = require("./home/ellipse-66.svg");
 const img8 = require("./home/subtract2.svg");
 const img9 = require("./home/rectangle-20@2x.png");
-const img10 = require("./home/image-2@2x.png");
 const img11 = require("./home/iconoirreceivedollars.svg");
 const img12 = require("./home/iconoirsenddollars.svg");
 const img13 = require("./home/iconoirsenddollars.svg");
