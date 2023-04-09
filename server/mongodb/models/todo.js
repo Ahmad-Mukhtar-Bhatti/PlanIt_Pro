@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const todoSchema = new mongoose.Schema({
-    username:{type: String, required: true,ref: 'User'},
+    U_id:{type: mongoose.Schema.Types.ObjectId, required: true,ref: 'users'},
     risk:{type: String, required: false},
     Description:{type: String, required: false},
     Priority:{type: Number, required: false}

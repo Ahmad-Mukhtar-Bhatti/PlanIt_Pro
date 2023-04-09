@@ -26,7 +26,7 @@ const img15 = require("./home/subtract.svg");
 const DashboardHomeScreen = () => {
 
     const navigate = useNavigate();
-    const [,setCookies]=useCookies('access_token')
+    const [cookies,setCookies]=useCookies('access_token')
 
     const [name, setName] = useState("");
     const [bal, setBal] = useState("");
@@ -59,6 +59,12 @@ const DashboardHomeScreen = () => {
 
     getName(u_name);
     // console.log("yess");
+
+    const logout = () => {
+        setCookies("access_token","");
+        window.localStorage.removeItem("User_ID")
+        navigate("/login")
+    }
 
   return (
 
@@ -169,8 +175,9 @@ const DashboardHomeScreen = () => {
         <button className="dashboard-home-screen-child8" />
         
         <div className="logout">
-            {/* add someway to remove login access */}
-            <Link to="/login" style={{textDecoration: 'none', color:"white"}}>Logout</Link>
+    
+            <button onClick={logout}>Logout</button>
+
         </div>
         
         <img className="wallet-alt-icon2" alt="" src={img14} />
