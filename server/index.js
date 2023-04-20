@@ -13,6 +13,13 @@ import { removeTaskRouter } from './routes/removeTask.routes.js'
 import { adjustTaskRouter } from './routes/adjustTask.routes.js'
 import { piechartRouter } from './routes/piechart.routes.js'
 import { complaintsRouter } from './routes/complaints.routes.js'
+<<<<<<< Updated upstream
+import { adminallRouter } from './routes/admin.routes.js'
+
+
+=======
+import { getPredictionsRouter } from './routes/getpredictions.routes.js'
+>>>>>>> Stashed changes
 
 dotenv.config()
 
@@ -35,6 +42,11 @@ App.use('/removeTask', removeTaskRouter)
 App.use('/adjustTask', adjustTaskRouter)
 App.use('/submitComplaints', complaintsRouter)
 App.use('/piechart', piechartRouter)
+<<<<<<< Updated upstream
+App.use('/admin', adminallRouter);
+=======
+App.use('/getPredictions', getPredictionsRouter)
+>>>>>>> Stashed changes
 
 const startServer = async () => {
     try{
