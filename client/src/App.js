@@ -13,6 +13,7 @@ import DashboardToDoList from './components/DashboardToDoList';
 import DashboardPredictions from './components/DashboardPredictions';
 import DashboardHelp from './components/helpPage';
 import DashboardPieChart from './components/DashboardPiechart';
+import DashboardSubmitComplaint from './components/DashboardSubmitComplaint';
 
 
 // to do list options
@@ -44,7 +45,7 @@ function App() {
 
           <Route path = "/editToDoList" element = {<DashboardEditToDoList/>} />
           <Route path = "/addNewTask" element = {<DashboardAddNewTask/>} />
-          <Route path = "/adjustTasks" element = {<DashboardAdjustTasks/>} />
+          <Route path = "/submitComplaints" element = {<DashboardSubmitComplaint/>} />
 
           
         </Routes>

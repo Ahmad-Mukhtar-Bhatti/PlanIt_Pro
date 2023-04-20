@@ -3,11 +3,42 @@ import React from "react";
 import { Pie } from "react-chartjs-2";
 import Chart from "chart.js/auto";
 import { useNavigate } from "react-router-dom";
+import { getUserID } from "../hooks/useGetUserID.js";
+import  { useEffect, useState } from "react";
+import axios from "axios";
+
 
 const img2 = require("./home/topbar.svg");
 const img3 = require("./home/bg01-1@2x.png");
 
 const PieChart = () => {
+
+  const userID =  getUserID();
+
+  const getdata = async (userID) => {
+    console.log("The form was submitted with the following data:");
+    console.log(userID);
+
+    try {
+     const response = await axios.post("http://localhost:3010/piechart", {userID});
+
+      console.log(response)
+
+    } catch (error) {
+      console.log("An error occurred");
+    }
+  };
+
+  getdata(userID)
+
+  
+
+
+  // useEffect(() => {
+    
+  // }, []);
+
+
     const total_budget = 1000;
     const spendings = ["food", "entertainment", "rent"];
     const spendings_cost = [30, 40, 30];
