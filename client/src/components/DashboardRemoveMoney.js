@@ -20,7 +20,7 @@ const DashboardRemoveMoney = () => {
     alert(`Debited Money: ${amount}, type: ${type}`)
 
     try {
-      const response = await axios.post("http://localhost:3010/removemoney", {userID, amount});
+      const response = await axios.post("http://localhost:3010/removemoney", {userID, amount,type});
 
       console.log("removemoney",response)
       navigate('/home')
