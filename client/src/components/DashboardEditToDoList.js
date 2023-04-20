@@ -1,6 +1,10 @@
 import "./DashboardEditToDoList.css";
+import {useEffect, useState} from 'react';
+import {useCookies} from 'react-cookie'
+import { useNavigate } from 'react-router-dom';
 import {Link} from 'react-router-dom'
-import React from 'react'
+import axios from "axios";
+import { getUserID } from "../hooks/useGetUserID.js";
 
 const logo = require("./home/se-logogphotoaidcomcropped-1@2x.png");
 const background = require("./home/bg01-1@2x.png");
@@ -11,10 +15,57 @@ const line41 = require("./home/line-41.svg");
 const cancel = require("./home/cancel.svg");
 
 
-const DashboardEditToDoList = () => {
+const DashboardEditToDoList = (props) => {
+  const handleDoneClick = async (task) => {
+    const uid = getUserID();
+    console.log(`Task "${task.Description}" marked as done`);
+    const d = task.Description;
+    console.log("The task is", d);
+    try {
+      console.log("HERE NOW", uid);
+      const response = await axios.delete("http://localhost:3010/removeTask/", { data: { uid, task: d } });
+      alert("Task Marked as Done");
+      setToDoList(response.data.message);
+      console.log("HERE IT IS", response.data.message);
+    } catch (error) {
+    console.log(error);
+    }
+    };
+    
+    const handleRemoveClick = async (task) => {
+    console.log(`Task "${task.Description}" removed`);
+    const d = task.Description;
+    console.log("The task is", d);
+    try {
+      console.log("HERE NOW", uid);
+      const response = await axios.delete("http://localhost:3010/removeTask/", { data: { uid, task: d } });
+      alert("Task Removed");
+      setToDoList(response.data.message);
+      console.log("HERE IT IS", response.data.message);
+    } catch (error) {
+    console.log(error);
+    }
+    // call function passing task description as argument
+    };
   function handleSaveChanges() {
     alert("Changes saved!");
   }
+  const [toDoList, setToDoList] = useState([]);
+  const uid = getUserID();
+
+  useEffect(() => {
+    const fetchToDoList = async () => {
+    try {
+      console.log("HERE NOW", uid);
+      const response = await axios.post("http://localhost:3010/ToDo", { uid });
+      setToDoList(response.data.message);
+      console.log("HERE IT IS", response.data.message);
+    } catch (error) {
+    console.log(error);
+    }
+    };
+    fetchToDoList();
+    }, []);
 
   return (
     <div className="editt-dashboard-edit-to-do-list">
@@ -23,42 +74,7 @@ const DashboardEditToDoList = () => {
       <div className="editt-dashboard-edit-to-do-list-child" />
       <b className="editt-to-do-list">TO-DO LIST</b>
       <div className="editt-dashboard-edit-to-do-list-item" />
-      <button className="editt-remove">Remove</button>
-      <button className="editt-done">Done</button>
-      <button className="editt-remove1">Remove</button>
-      <button className="editt-done1">Done</button>
-      <button className="editt-remove2">Remove</button>
-      <button className="editt-done2">Done</button>
-      <img className="editt-cancel-icon" alt="" src={cancel} />
-      <img className="editt-cancel-icon1" alt="" src={cancel} />
-      <img className="editt-cancel-icon2" alt="" src={cancel} />
-      <img className="editt-cancel-icon3" alt="" src={cancel} />
-      <img className="editt-cancel-icon4" alt="" src={cancel} />
-      <img
-        className="editt-dashboard-edit-to-do-list-inner"
-        alt=""
-        src={line4}
-      />
-      <img className="editt-editt-line-icon" alt="" src={line41} />
-      <img
-        className="editt-dashboard-edit-to-do-list-child1"
-        alt=""
-        src={line41}
-      />
-      <img
-        className="editt-dashboard-edit-to-do-list-child2"
-        alt=""
-        src={line41}
-      />
-      <img
-        className="editt-dashboard-edit-to-do-list-child3"
-        alt=""
-        src={line41}
-      />
-      <button className="editt-remove3">Remove</button>
-      <button className="editt-done3">Done</button>
-      <button className="editt-remove4">Remove</button>
-      <button className="editt-done4">Done</button>
+
       <button className="editt-rectangle-button" />
       
       <div className="editt-add-new-task">
@@ -66,7 +82,9 @@ const DashboardEditToDoList = () => {
       </div>
 
       <button className="editt-dashboard-edit-to-do-list-child4" />
-      <div className="editt-adjust-tasks">Adjust Tasks</div>
+      <div className="editt-adjust-task">
+        <Link to="/adjustTasks" style={{ textDecoration: "none", color: "white"}}> Adjust Tasks</Link>
+      </div>
       <button className="editt-dashboard-edit-to-do-list-child5" />
 
       <div className="editt-save-changes">
@@ -78,36 +96,24 @@ const DashboardEditToDoList = () => {
           Save Changes
         </Link>
       </div>
-
-      <div className="editt-call-a-friend">Call a friend</div>
-      <div className="editt-book-a-vacation">Book a vacation</div>
-      <div className="editt-go-for-a">Go for a walk</div>
-      <div className="editt-buy-groceries">Buy Groceries</div>
-      <div className="editt-checklist">
-        <p className="editt-checklist1">Checklist:</p>
-      </div>
-      <img className="editt-rectangle-icon" alt="" src={rectangle1} />
-      <img
-        className="editt-dashboard-edit-to-do-list-child6"
-        alt=""
-        src={rectangle1}
-      />
-      <img
-        className="editt-dashboard-edit-to-do-list-child7"
-        alt=""
-        src={rectangle1}
-      />
-      <img
-        className="editt-dashboard-edit-to-do-list-child8"
-        alt=""
-        src={rectangle1}
-      />
-      <img
-        className="editt-dashboard-edit-to-do-list-child9"
-        alt=""
-        src={rectangle1}
-      />
-      <div className="editt-pay-bills">Pay Bills</div>
+      <div className="to-do-list-checklist">
+      <p className="to-do-list-checklist1">Checklist:</p>
+      {toDoList.map(task => (
+        <div key={task._id}>
+          <p className="task-description" style={{ marginLeft: 10 }}>{task.Description}</p>
+          <button
+            className="done-button"
+            style={{ backgroundColor: "green" }}
+            onClick={() => handleDoneClick(task)}
+          >Done</button>
+          <button
+            className="remove-button"
+            style={{ backgroundColor: "red" }}
+            onClick={() => handleRemoveClick(task)}
+          >Remove</button>
+        </div>
+      ))}
+    </div>
       <img
         className="editt-se-logog-photoaidcom-cropped-1"
         alt=""

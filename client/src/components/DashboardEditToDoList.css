@@ -238,7 +238,16 @@
 .editt-add-new-task {
   position: absolute;
   top: 155px;
-  left: 797px;
+  left: 825px;
+  font-size: var(--font-size-5xl);
+  display: inline-block;
+  width: 176px;
+  height: 28px;
+}
+.editt-adjust-task {
+  position: absolute;
+  top: 155px;
+  left: 597px;
   font-size: var(--font-size-5xl);
   display: inline-block;
   width: 176px;
@@ -312,6 +321,13 @@
 .editt-go-for-a {
   top: 382px;
   width: 193px;
+}
+.to-do-list-checklist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 311px;
+  top: 210px;
 }
 .editt-buy-groceries {
   top: 332px;
