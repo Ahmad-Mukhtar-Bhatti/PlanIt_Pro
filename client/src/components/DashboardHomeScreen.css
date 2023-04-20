@@ -50,11 +50,12 @@
 }
 .qaboos-ali-khan {
   top: 167px;
-  left: 474.09px;
+  left: 450px;
   line-height: 20px;
   display: inline-block;
   width: 306.95px;
   height: 28px;
+  text-align: center;
 }
 .rectangle-parent {
   position: absolute;
@@ -71,7 +72,21 @@
 }
 .pkr-3578 {
   top: 206px;
-  left: 117px;
+  left: 140px;
+  font-size: 30px;
+  letter-spacing: -0.01em;
+  line-height: 34px;
+  font-weight: 600;
+  width: 319px;
+  height: 66px;
+}
+.convert {
+  position: absolute;
+  display: inline-block;
+}
+.convert {
+  top: 180px;
+  left: 50px;
   font-size: 60px;
   letter-spacing: -0.01em;
   line-height: 34px;
@@ -282,7 +297,7 @@
 .view-history {
   position: absolute;
   top: 630px;
-  left: 489px;
+  left: 475px;
   font-size: 18px;
   font-family: Poppins;
   display: inline-block;
