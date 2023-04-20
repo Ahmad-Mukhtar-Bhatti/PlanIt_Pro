@@ -6,21 +6,48 @@ import axios from "axios";
 import {useCookies} from 'react-cookie'
 
 
-import { Component } from "react";
+
+
 const img = require("./planitpro_logo.png");
+
+
+
 
 
 const Signup = (props) => {
   const navigate = useNavigate();
   const [, setCookies] = useCookies('access_token');
+  // const [imageUrl, setImageUrl] = useState("");
 
-  const handleClick = async (username, name, password, password2) => {
+  const handleClick = async (username, name, password, password2,pic) => {
     console.log("The form was submitted with the following data:");
-    console.log({ username, name, password, password2 });
+    console.log({ username, name, password, password2 ,pic});
+
+    const formData = new FormData();
+    formData.append("file", pic);
+    formData.append("upload_preset", "et2wvsbo");
+
+    const response= await axios.post('https://api.cloudinary.com/v1_1/dgbg003qn/image/upload', formData)
+    
+
+    
+
+    const url =  response.data.secure_url;
+    
+    console.log(url)
+
+    
+
+  
+
+  
+
+
+    
 
     // Check if the username already exists
     try {
-      const response = await axios.post("http://localhost:3010/signup", { username, name, password });
+      const response = await axios.post("http://localhost:3010/signup", { username, name, password,url });
       if (response.data.message === "Success") {
         alert("User Created");
         navigate("/login")
@@ -55,6 +82,8 @@ const Signup = (props) => {
     }
   };
 
+
+
   return (
 
         <body class = "su-body">
@@ -67,7 +96,6 @@ const Signup = (props) => {
             <br></br> 
             <FormHeader title="CREATE ACCOUNT" />
             <Form onClick={handleClick}/>
-        
           </div>
         </div>
                 
@@ -89,6 +117,14 @@ const Form = (props) => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
+
+  const [pic, setPic] = useState("");
+
+
+  const handleFileInputChange = async event => {
+    setPic(event.target.files[0]);
+  }
+    
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -112,9 +148,8 @@ const Form = (props) => {
      <FormInput description="Name" placeholder="Enter your name" type="text"  value={name} onChange={handleNameChange}/>
      <FormInput description="Password" placeholder="Enter your password" type="password"  value={password} onChange={handlePasswordChange}/>
      <FormInput description="Re-Enter Password" placeholder="Re-enter your password" type="password"  value={password2} onChange={handlePassword2Change}/>
-     <br></br><input type="checkbox" id="termsnconditions" name="tnx" value="Terms and Conditions"/>
-     <label for="termsnconditions"> I Agree with the Terms and Conditions</label><br></br>
-     <FormButton title="Sign Up" onClick={() => props.onClick(username, name, password, password2)}/>
+     <FormInputFile description="Profile Picture" onChange={handleFileInputChange} />
+     <FormButton title="Sign Up" onClick={() => props.onClick(username, name, password, password2,pic)}/>
    </span>
   );
   };
@@ -129,5 +164,12 @@ const FormInput = props => (
   <div class="row">
     <label>{props.description}</label>
     <input type={props.type} placeholder={props.placeholder} value={props.value} onChange={props.onChange}/>
+  </div>  
+);
+const FormInputFile = props => (
+  <div class="row">
+    <label>{props.description}</label>
+    <input type="file" onChange={props.onChange} />
+    {/* <button onClick={() => document.querySelector('input[type="file"]').click()}>Upload</button> */}
   </div>  
 );

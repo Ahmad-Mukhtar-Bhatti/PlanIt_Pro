@@ -55,27 +55,9 @@ const DashboardHomeScreen = () => {
             }
           };
 
-          getdata(userID)
-    },[])
+    getName(u_name);
+    // console.log("yess");
 
-  
-    
-
-
-    const logout = () => {
-        setCookies("access_token","");
-        window.localStorage.removeItem("User_ID")
-        navigate("/login")
-    }
-
-
-    const edit_prof = () => {
-        setCookies("access_token","");
-        window.localStorage.removeItem("User_ID")
-        navigate("/editprof")
-    }
-
-    
   return (
 
     <div className="body">
@@ -158,7 +140,7 @@ const DashboardHomeScreen = () => {
         <div className="submit-complaint">Submit Complaint</div>
         <button className="dashboard-home-screen-child7" />
         <div className="help">Help</div>
-        <img className="image-2-icon" alt="" src={pic} />
+        <img className="image-2-icon" alt="" src={img10} />
         <img
             className="se-logog-photoaidcom-cropped-1"
             alt=""
@@ -190,6 +172,9 @@ const DashboardHomeScreen = () => {
         <div className="logout">
     
             <button onClick={logout}>Logout</button>
+
+    
+            
 
         </div>
     
