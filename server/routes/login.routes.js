@@ -1,18 +1,10 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
-import { createUser,getAllUsers,getUserInfoByID } from '../controllers/user.controller.js';
 import  userModel from '../mongodb/models/user.js';
-import bcrypt from 'bcryptjs/dist/bcrypt.js';
+import bcrypt from 'bcrypt';
 
 
 const router=express.Router();
-
-// router.route('/').get(getAllUsers)
-// router.route('/').get(createUser)
-// router.route('/:id').get(getUserInfoByID)
-
-
-
 
 
 router.post('/', async (req, res) => {

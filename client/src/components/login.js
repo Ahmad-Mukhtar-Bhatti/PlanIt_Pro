@@ -28,7 +28,7 @@ const Login = (props) => {
       console.log(response.data.message);
 
       if(response.data.message !== "invalid"){
-        navigate("/home", { state: { u_name: username} });
+        navigate("/home", { state: {username} });
       }
       else{
         alert("invalid Credentials, Please try again later")

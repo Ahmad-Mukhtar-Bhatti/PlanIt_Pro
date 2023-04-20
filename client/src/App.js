@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/login';
 import Signup from './components/signup';
 import Home from './components/home';
+import Editprof from './components/editprof';
 
 // dashboard 
 import DashboardAddMoney from './components/DashboardAddMoney';
@@ -27,6 +28,7 @@ function App() {
           <Route path = "/home" element = {<Home/>} />
           {/*  should add some kind of authentication to prevent users from 
           jumping from site to site without user authentication*/}
+          <Route path = "/editprof" element = {<Editprof/>} />
           <Route path = "/addmoney" element = {<DashboardAddMoney/>} />
           <Route path = "/removemoney" element = {<DashboardRemoveMoney/>} />
           <Route path = "/ToDoList" element = {<DashboardToDoList/>} />

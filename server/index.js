@@ -5,6 +5,8 @@ import connectDB from './mongodb/connect.js'
 import {loginRouter} from './routes/login.routes.js'
 import {signupRouter} from './routes/signup.routes.js'
 import {homeRouter} from './routes/home.routes.js'
+import {addmoneyRouter} from './routes/addmoney.routes.js'
+import {removemoneyRouter} from './routes/removemoney.routes.js'
 
 dotenv.config()
 
@@ -19,10 +21,8 @@ App.get('/',(req,res) =>{
 App.use('/login',loginRouter);
 App.use('/signup',signupRouter);
 App.use('/home',homeRouter);
-
-// App.get('/signup',(req,res) =>{
-//     res.send({message:'Hello'})
-// })
+App.use('/addmoney',addmoneyRouter);
+App.use('/removemoney',removemoneyRouter);
 
 const startServer = async () => {
     try{

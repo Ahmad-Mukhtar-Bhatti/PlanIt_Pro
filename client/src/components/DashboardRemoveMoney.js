@@ -1,6 +1,9 @@
 import { Stack, Select } from "@chakra-ui/react";
 import "./DashboardRemoveMoney.css";
-import {Link} from 'react-router-dom'
+import {useNavigate,Link} from 'react-router-dom'
+import axios from "axios";
+import { useState } from "react";
+import { getUserID } from "../hooks/useGetUserID.js";
 
 
 const logo = require("./home/se-logogphotoaidcomcropped-1@2x.png");
@@ -8,8 +11,35 @@ const background = require("./home/bg01-1@2x.png");
 const topbar = require("./home/topbar.svg");
 
 const DashboardRemoveMoney = () => {
-  function handleSaveChanges() {
-    alert("Removed Money!");
+  const navigate = useNavigate();
+  const [amount, setAmount] = useState("");
+  const [type, setType] = useState("");
+  const userID = getUserID();
+
+  const handleSaveChanges = async () => {
+    alert(`Debited Money: ${amount}, type: ${type}`)
+
+    try {
+      const response = await axios.post("http://localhost:3010/removemoney", {userID,amount});
+
+      console.log("removemoney",response)
+      // navigate('/home')
+      
+    } catch (error) {
+      console.log("An error occurred");
+    }
+
+
+  };
+
+  
+
+  function handleAmountChange(event) {
+    setAmount(event.target.value);
+  }
+    
+  function handleTypeChange(event) {
+    setType(event.target.value);
   }
   return (
     <div className="dashboard-remove-money">
@@ -22,7 +52,6 @@ const DashboardRemoveMoney = () => {
 
       <div className="remove-money1">
         <Link
-          to="/home"
           style={{ textDecoration: "none", color: "white" }}
           onClick={handleSaveChanges}
         >
@@ -46,6 +75,9 @@ const DashboardRemoveMoney = () => {
         className="atom-input-container-sizes"
         type="number"
         placeholder="Enter amount here"
+        value={amount}
+        onChange={handleAmountChange}
+
       />
       <Stack className="remove-money-atom-input-container-sizes1" w="560px">
         <Select
@@ -53,6 +85,8 @@ const DashboardRemoveMoney = () => {
           placeholder="Select option"
           textColor="#000"
           backgroundColor="#a24cfc"
+          value={type}
+          onChange={handleTypeChange}
         >
           <option value="Food">Food</option>
           <option value="Travel">Travel</option>

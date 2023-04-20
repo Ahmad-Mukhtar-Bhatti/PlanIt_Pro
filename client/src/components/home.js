@@ -1,10 +1,11 @@
 import "./DashboardHomeScreen.css";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {useCookies} from 'react-cookie'
-import { useLocation } from 'react-router-dom';
+// import { useLocation } from 'react-router-dom';
+import { getUserID } from "../hooks/useGetUserID.js";
 
 
 const img = require("./home/se-logogphotoaidcomcropped-1@2x.png");
@@ -16,7 +17,6 @@ const img6 = require("./home/ellipse-65.svg");
 const img7 = require("./home/ellipse-66.svg");
 const img8 = require("./home/subtract2.svg");
 const img9 = require("./home/rectangle-20@2x.png");
-const img10 = require("./home/image-2@2x.png");
 const img11 = require("./home/iconoirreceivedollars.svg");
 const img12 = require("./home/iconoirsenddollars.svg");
 const img13 = require("./home/iconoirsenddollars.svg");
@@ -26,45 +26,64 @@ const img15 = require("./home/subtract.svg");
 const DashboardHomeScreen = () => {
 
     const navigate = useNavigate();
-    const [,setCookies]=useCookies('access_token')
+    const [cookies,setCookies]=useCookies('access_token')
 
     const [name, setName] = useState("");
     const [bal, setBal] = useState("");
+    const [pic, setPic] = useState("");
+
+    const userID = getUserID();
 
 
-    const {state} = useLocation();
-    const { u_name} = state;
 
-  
-    const getName = async (username) => {
-      console.log("The form was submitted with the following data:");
-      console.log({ username });
-  
-      try {
-        const response= await axios.post("http://localhost:3010/home", { username});
 
-        console.log("dataaaa");
-       
-        // setCookies(response.data.token);
-        // window.localStorage.setItem("User_ID", response.data.userID);
-  
-        setName(response.data.uname);
-        setBal(response.data.userbalance);
-        // console.log(response.data);
+    useEffect(()=>{
+      
+        const getdata = async (userID) => {
+            console.log("The form was submitted with the following data:");
+            console.log(userID );
         
-      } catch (error) {
-        console.log("An error occurred");
-      }
-    };
+            try {
+              const response= await axios.post("http://localhost:3010/home", {userID});
+             
+              setName(response.data.name)
+              setBal(response.data.balance)
+              setPic(response.data.pic)
+              
+            } catch (error) {
+              console.log("An error occurred");
+            }
+          };
 
-    getName(u_name);
-    // console.log("yess");
+          getdata(userID)
+    },[])
 
+  
+    
+
+
+    const logout = () => {
+        setCookies("access_token","");
+        window.localStorage.removeItem("User_ID")
+        navigate("/login")
+    }
+
+
+    const edit_prof = () => {
+        setCookies("access_token","");
+        window.localStorage.removeItem("User_ID")
+        navigate("/editprof")
+    }
+
+    
   return (
 
     <div className="body">
         <div className="dashboard-home-screen">
         <img className="top-bar-icon" alt="" src={img2} />
+    
+        {/* <button className="bg-01-1-icon" onClick={logout}>Yessir</button> */}
+
         <img className="bg-01-1-icon" alt="" src={img3} />
         <div className="dashboard-home-screen-child" />
         <b className="home">HOME</b>
@@ -123,7 +142,7 @@ const DashboardHomeScreen = () => {
             <img className="subtract-icon2" alt="" src={img8} />
         </button>
         <button className="dashboard-home-screen-child4" />
-        <div className="edit-account">Edit Account</div>
+        <div className="edit-account" onClick = {edit_prof}>Edit Account</div>
         
         <div className="checklist">
             <p className="checklist1">Checklist:</p>
@@ -139,7 +158,7 @@ const DashboardHomeScreen = () => {
         <div className="submit-complaint">Submit Complaint</div>
         <button className="dashboard-home-screen-child7" />
         <div className="help">Help</div>
-        <img className="image-2-icon" alt="" src={img10} />
+        <img className="image-2-icon" alt="" src={pic} />
         <img
             className="se-logog-photoaidcom-cropped-1"
             alt=""
@@ -169,9 +188,15 @@ const DashboardHomeScreen = () => {
         <button className="dashboard-home-screen-child8" />
         
         <div className="logout">
-            {/* add someway to remove login access */}
-            <Link to="/login" style={{textDecoration: 'none', color:"white"}}>Logout</Link>
+    
+            <button onClick={logout}>Logout</button>
+            <br></br>
+            {/* <button onClick={edit_prof}>Edit Profile</button> */}
+
         </div>
+    
+
+
         
         <img className="wallet-alt-icon2" alt="" src={img14} />
         </div>
