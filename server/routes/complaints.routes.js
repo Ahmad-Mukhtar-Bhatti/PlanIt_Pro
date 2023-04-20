@@ -8,7 +8,7 @@ const router=express.Router();
 router.post('/', async (req, res) => {
     const {userID,comments} = req.body;
 
-    console.log("submit backed recieved",comments);
+    console.log("submit backed recieved",userID,comments);
 
     const newcomplaints= new ComplaintModel({U_id:userID,Description:comments});
     await newcomplaints.save();

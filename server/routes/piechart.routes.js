@@ -4,13 +4,21 @@ import  TxnModel from '../mongodb/models/txn.js';
 const router=express.Router();
 
 router.post('/', async (req, res) => {
-  const {uid} = req.body;
+  
+  const uid = req.body.userID
   console.log("piechart backend recieved",uid);
 
-    const Tasks = await TxnModel.find({ U_id: uid });
-    // console.log(Tasks)
-    if (Tasks.type==='debit'){
+    const Tasks = await TxnModel.find({U_id:uid});
+    console.log(Tasks)
+
+    if (!Tasks) {
+      return res.json({ message :"invalid"})
+  }
+    else if (Tasks.Type ==='debit'){
         res.json({message:Tasks});
+    }
+    else{
+       res.json({message:Tasks});
     }
 })
 

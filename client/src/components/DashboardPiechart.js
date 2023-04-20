@@ -15,28 +15,26 @@ const PieChart = () => {
 
   const userID =  getUserID();
 
-  const getdata = async (userID) => {
-    console.log("The form was submitted with the following data:");
-    console.log(userID);
 
-    try {
-     const response = await axios.post("http://localhost:3010/piechart", {userID});
+  useEffect(() => {
 
-      console.log(response)
-
-    } catch (error) {
-      console.log("An error occurred");
-    }
-  };
-
-  getdata(userID)
-
+    const getdata = async (userID) => {
+      console.log("The form was submitted with the following data:");
+      console.log(userID);
   
-
-
-  // useEffect(() => {
+      try {
+        const response = await axios.post("http://localhost:3010/piechart", {userID});
+  
+        console.log(response)
+  
+      } catch (error) {
+        console.log("An error occurred");
+      }
+    };
+  
+    getdata(userID)
     
-  // }, []);
+  }, []);
 
 
     const total_budget = 1000;
