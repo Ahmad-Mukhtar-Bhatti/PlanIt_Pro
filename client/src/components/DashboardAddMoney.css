@@ -28,6 +28,14 @@
   width: 105px;
   height: 25px;
 }
+.add-money4 {
+  position: absolute;
+  top: 27px;
+  left: 650px;
+  display: inline-block;
+  width: 200px;
+  height: 25px;
+}
 .dashboard-add-money-item {
   position: absolute;
   top: 87px;
@@ -130,6 +138,33 @@
 }
 .atom-input-container-sizes1 {
   top: 285px;
+}
+.atom-input-container-sizes2 {
+  /* border: 1px solid var(--gray-100); */
+  border: 4px solid #6f00ff;
+  font-weight: 500;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-sm);
+  background-color: var(--base-white);
+  position: absolute;
+  /* top: 174px; */
+  left: 435px;
+  /* border-radius: var(--br-xl); */
+  border-radius: 20px;
+  box-shadow: var(--light-elevation-200);
+  box-sizing: border-box;
+  width: 560px;
+  height: 260px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* padding: var(--padding-5xs); */
+  padding: 8px;
+  align-items: flex-start;
+  justify-content: center;
+}
+.atom-input-container-sizes2 {
+  top: 200px;
 }
 .dashboard-add-money {
   position: relative;
