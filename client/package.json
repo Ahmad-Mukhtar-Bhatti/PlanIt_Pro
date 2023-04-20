@@ -17,11 +17,8 @@
     "cloudinary-react": "^1.8.1",
     "dotenv": "^16.0.3",
     "react": "^18.2.0",
-<<<<<<< HEAD
     "react-beautiful-dnd": "^13.1.1",
-=======
     "react-bootstrap": "^2.7.4",
->>>>>>> 1f02acc96615186644e8954292e91ab266f18efd
     "react-chartjs": "^1.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-cookie": "^4.1.1",

@@ -37,7 +37,7 @@ function App() {
           <Route path = "/editprof" element = {<Editprof/>} />
           <Route path = "/addmoney" element = {<DashboardAddMoney/>} />
           <Route path = "/removemoney" element = {<DashboardRemoveMoney/>} />
-          <Route path = "/ToDoList" element = {<DashboardToDoList/>} />
+          <Route path = "/ToDoList" element = {<DashboardEditToDoList/>} />
           <Route path = "/getPredictions" element = {<DashboardPredictions/>} />
           <Route path = "/helppage" element = {<DashboardHelp/>} />
           <Route path = "/piechart" element = {<DashboardPieChart/>} />
