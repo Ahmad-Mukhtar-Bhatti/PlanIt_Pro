@@ -1,0 +1,57 @@
+import React,{ useState }  from 'react'
+import { Container, Box, Body, Buttons } from './styles'
+import { FaArrowLeft, FaRegEdit } from 'react-icons/fa'
+
+import { useDispatch } from 'react-redux'
+import { editItem, edit } from '../../Store/sliceLists.js'
+import { editModal } from '../../Store/sliceModals.js'
+
+
+export const EditModal = () => {
+  const [value, setValue] = useState(edit.value)
+  const dispatch = useDispatch()
+
+  const handleItemValue = (e) => {
+    setValue(e.target.value)
+  }
+
+  const closeEditModal = () => {
+    dispatch(editModal(value))
+  }
+
+  const handleEditItem = () => {
+    if (value) {
+      dispatch(editItem(value))
+      closeEditModal()
+    }
+  }
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      handleEditItem()
+    }
+  }
+
+  return (
+    <Container>
+      <Box>
+        <header>
+          <button onClick={closeEditModal}>
+            <FaArrowLeft size={20} />
+          </button>
+          <h1>edit item</h1>
+          <FaRegEdit size={24} />
+        </header>
+        <Body className='mt-10 mb-6 px-4'>
+          <input onKeyDown={handleKeyDown} autoFocus type="text" value={value} onChange={handleItemValue} />
+        </Body>
+        <Buttons>
+          <button onClick={handleEditItem}>
+            Save
+          </button>
+        </Buttons>
+        <footer />
+      </Box>
+    </Container>
+  )
+}
