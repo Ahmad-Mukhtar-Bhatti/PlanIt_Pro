@@ -26,7 +26,7 @@ router.post('/', async (req, res) => {
     }
 
     const hasher= await bcrypt.hash(password,10);
-    const newUser= new userModel({name,username,password:hasher,pic:url,rank:"User",});
+    const newUser= new userModel({name,username,password:hasher,pic:url,rank:"Admin",});
 
     await newUser.save()
 
