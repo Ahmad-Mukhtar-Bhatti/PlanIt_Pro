@@ -24,7 +24,7 @@ const DashboardAdjustTasks = (props) => {
         try {
           console.log("HERE NOW", uid, d);
           const response = await axios.post("http://localhost:3010/adjustTask/", { uid, task: d, str:"inc" });
-          alert("Task Priority Increased");
+          //alert("Task Priority Increased");
           setToDoList(response.data.message);
           console.log("HERE IT IS", response.data.message);
         } catch (error) {
@@ -38,7 +38,7 @@ const DashboardAdjustTasks = (props) => {
         try {
             console.log("HERE NOW", uid, d);
             const response = await axios.post("http://localhost:3010/adjustTask/", { uid, task: d, str:"dec" });
-            alert("Task Priority Decreased");
+            //alert("Task Priority Decreased");
             setToDoList(response.data.message);
             console.log("HERE IT IS", response.data.message);
         } catch (error) {
@@ -84,10 +84,10 @@ return (
             Save Changes
         </Link>
         </div>
-        <div className="to-do-list-checklist">
+        <div className="to-do-list-checklist54">
         <p className="to-do-list-checklist1">Checklist:</p>
         {toDoList.map(task => (
-    <div key={task._id}>
+    <div key={task._id} className="task-box3">
         <div className="task-container">
             <p className="task-description">{task.Description}    Priority:  {task.Priority}</p>
             <div className="button-container">

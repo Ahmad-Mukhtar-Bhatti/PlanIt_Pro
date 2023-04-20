@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
         newPriority = currentPriority + 1;
         existingTask.Priority = newPriority;
         await existingTask.save();
-        const Tasks = await todoModel.find({ U_id: uid });
+        const Tasks = await todoModel.find({ U_id: uid }).sort({ Priority: -1 });
         res.json({ message: Tasks });
     } else {
         const currentPriority = existingTask.Priority;
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
         newPriority = currentPriority - 1;
         existingTask.Priority = newPriority;
         await existingTask.save();
-        const Tasks = await todoModel.find({ U_id: uid });
+        const Tasks = await todoModel.find({ U_id: uid }).sort({ Priority: -1 });
         res.json({ message: Tasks });
     }
 })

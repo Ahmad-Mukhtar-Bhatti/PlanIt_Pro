@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 import axios from "axios";
 import { getUserID } from "../hooks/useGetUserID.js";
+import { useHistory } from "react-router-dom";
 
 
 import { Board } from './Board'
@@ -28,6 +29,10 @@ const cancel = require("./home/cancel.svg");
 
 
 const DashboardEditToDoList = (props) => {
+  const handleButtonClick = () => {
+    console.log("Button clicked");
+    // Add code to navigate to a specific page here
+  };
   const handleDoneClick = async (task) => {
     const uid = getUserID();
     console.log(`Task "${task.Description}" marked as done`);
@@ -81,6 +86,7 @@ const DashboardEditToDoList = (props) => {
 
   const { newItemModal, editModal, configModal } = useSelector(modals)
 
+<<<<<<< HEAD
   return (
     <div className='App'>
       {
@@ -99,6 +105,55 @@ const DashboardEditToDoList = (props) => {
               </>
       }
       <GlobalStyle />
+=======
+      <button className="editt-rectangle-button" />
+      
+      <div className="editt-add-new-task">
+        <Link to="/addNewTask" style={{ textDecoration: "none", color: "white" }}> Add New Task </Link>
+      </div>
+
+      <button className="editt-dashboard-edit-to-do-list-child4" />
+      <div className="editt-adjust-task">
+        <Link to="/adjustTasks" style={{ textDecoration: "none", color: "white"}}> Adjust Tasks</Link>
+      </div>
+
+
+      <button className="editt-dashboard-edit-to-do-list-child5" />
+
+      <div className="editt-save-changes">
+        <Link
+          to="/ToDoList"
+          style={{ textDecoration: "none", color: "white" }}
+          onClick={handleSaveChanges}
+        >
+          Save Changes
+        </Link>
+      </div>
+
+      <div className="to-do-list-checklist89">
+      <p className="to-do-list-checklist11">Checklist:</p>
+      {toDoList.map(task => (
+        <div key={task._id} className="task-box2">
+          <p className="task-description" style={{ marginLeft: 10 }}>{task.Description}</p>
+          <button
+            className="done-button"
+            style={{ backgroundColor: "green" }}
+            onClick={() => handleDoneClick(task)}
+          >Done</button>
+          <button
+            className="remove-button"
+            style={{ backgroundColor: "red" }}
+            onClick={() => handleRemoveClick(task)}
+          >Remove</button>
+        </div>
+      ))}
+    </div>
+      <img
+        className="editt-se-logog-photoaidcom-cropped-1"
+        alt=""
+        src={logo}
+      />
+>>>>>>> 1f02acc96615186644e8954292e91ab266f18efd
     </div>
   )
 };

@@ -39,10 +39,10 @@
 }
 .addnew_atom-input-container-sizes {
   /* border: 1px solid var(--gray-100); */
-  border: 4px solid #6f00ff;
+  border: 4px solid #0a0215;
   background-color: var(--base-white);
   position: absolute;
-  top: 129px;
+  top: 229px;
   left: 399px;
   border-radius: 20px;
   box-shadow: var(--light-elevation-200);
@@ -92,11 +92,13 @@
 .dashboard-add-new-task {
   position: relative;
   background-color: var(--base-white);
-  width: 100%;
+  width: 150%;
   height: 1024px;
   overflow: hidden;
   text-align: left;
   font-size: 16px;
   color: var(--base-white);
   font-family: var(--font-poppins);
+  height: 100vh;
 }
+

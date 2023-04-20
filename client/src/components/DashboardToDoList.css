@@ -11,6 +11,16 @@
   height: 1024px;
   object-fit: cover;
 }
+.to-do-list-checklist-container {
+  border: 1px solid black;
+  padding: 10px;
+}
+.to-do-list-scrollable-container {
+  height: 300px; /* adjust to fit your needs */
+  overflow-y: scroll;
+}
+
+
 .dashboard-to-do-list-child {
   position: absolute;
   top: 0;
@@ -31,14 +41,14 @@
   height: 25px;
 }
 .dashboard-to-do-list-item {
-  position: absolute;
-  top: 97px;
-  left: 36px;
-  border-radius: var(--br-14xl);
-  background-color: var(--color-darkslateblue-100);
-  width: 642px;
-  height: 586px;
+  display: flex;
+  justify-content: center;
+  bottom: 90px;
+  width: 97px;
+  height: 25px;
+  background-color: #cd2411;
 }
+
 .book-a-vacation,
 .to-do-list-buy-groceries,
 .call-a-friend,
@@ -54,33 +64,42 @@
   width: 20px;
   height: 24px;
 }
-
-.book-a-vacation,
-.to-do-list-buy-groceries,
-.to-do-list-go-for-a {
-  top: 324px;
-  width: 237px;
-}
-.to-do-list-buy-groceries,
-.to-do-list-go-for-a {
-  top: 276px;
-  width: 193px;
-}
-.to-do-list-buy-groceries {
-  top: 231px;
-  width: 202px;
-}
 .to-do-list-checklist1 {
-  margin: 0;
+  margin: 10;
+  font-size: 24px;
+  color: white;
 }
 .to-do-list-checklist {
   position: absolute;
-  top: 124px;
-  left: 61px;
-  font-size: var(--font-size-21xl);
-  display: inline-block;
-  width: 205px;
-  height: 47px;
+  left: 120px;
+  right: 650px;
+  top: 110px;
+  bottom: 110px;
+  height: 400px; /* set a fixed height for the container */
+  overflow-y: scroll; /* add a vertical scroll bar */
+}
+.to-do-list-checklist54{
+  position: absolute;
+  left: 380px;
+  top: 130px;
+  height: 440px; /* set a fixed height for the container */
+  overflow-y: scroll; /* add a vertical scroll bar */
+}
+.task-box {
+  border: 1px solid black;
+  background-color: #e0cfe5;
+  width: 300px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.task-box3 {
+  border: 1px solid black;
+  background-color: #e0cfe5;
+  width: 540px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 .dashboard-to-do-list-inner,
 .to-do-list-rectangle-icon {
@@ -144,40 +163,14 @@
 }
 .home-goer {
   position: absolute;
-  top: 110px;
+  top: 135px;
   left: 1330px;
   font-size: 22px;
   display: inline-block;
   width: 62px;
   height: 28px;
 }
-.to-do-list-rectangle-div {
-  position: absolute;
-  top: 97px;
-  left: 790px;
-  border-radius: var(--br-14xl);
-  background-color: var(--color-darkslateblue-100);
-  width: 541px;
-  height: 586px;
-}
-.attend-social-event,
-.take-pet-to,
-.watch-a-movie {
-  position: absolute;
-  top: 391.5px;
-  left: 891.75px;
-  display: inline-block;
-  width: 316px;
-  height: 29px;
-}
-.take-pet-to,
-.watch-a-movie {
-  top: 326.5px;
-}
-.take-pet-to {
-  top: 257.75px;
-  left: 889.75px;
-}
+
 .dashboard-to-do-list-child4,
 .dashboard-to-do-list-child5,
 .dashboard-to-do-list-child6,
@@ -208,22 +201,7 @@
   top: 32.78%;
   bottom: 65.26%;
 }
-.do-laundry,
-.recent {
-  position: absolute;
-  top: 195px;
-  left: 892px;
-  display: inline-block;
-  width: 170px;
-  height: 29px;
-}
-.recent {
-  top: 117px;
-  left: 810px;
-  font-size: var(--font-size-21xl);
-  width: 158px;
-  height: 41px;
-}
+
 .se-logog-photoaidcom-cropped-1 {
   position: absolute;
   top: 9px;
@@ -235,6 +213,7 @@
 .dashboard-to-do-list {
   position: relative;
   background-color: var(--color-white);
+  
   width: 100%;
   height: 1024px;
   overflow: hidden;
@@ -242,4 +221,36 @@
   font-size: var(--font-size-11xl);
   color: var(--color-white);
   font-family: var(--font-inter);
+}
+
+
+
+
+
+.gradient-custom-2 {
+  /* fallback for old browsers */
+  background: #7e40f6;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(126, 64, 246, 1),
+    rgba(80, 139, 252, 1)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(126, 64, 246, 1),
+    rgba(80, 139, 252, 1)
+  );
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, 0.2);
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
 }
