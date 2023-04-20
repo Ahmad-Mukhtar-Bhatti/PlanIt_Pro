@@ -1,6 +1,6 @@
 import express from 'express';
 import  BudgetModel from '../mongodb/models/budget.js';
-
+import  TxnModel from '../mongodb/models/txn.js';
 
 
 const router=express.Router();
@@ -18,6 +18,7 @@ router.post('/', async (req, res) => {
     const budget = await BudgetModel.findOne({U_id:userID});
 
 
+
     if (!budget) {
         return res.json({ message :"invalid"})
     }
@@ -25,9 +26,9 @@ router.post('/', async (req, res) => {
     budget.balance -= parseInt(amount);
     await budget.save();
 
+    const newtxn= new TxnModel({U_id:userID,amount,Type:"debit",Option:type});
+    await newtxn.save();
 
-  
-    console.log(budget.balance)
     res.json({balance:budget.balance});
 
 
