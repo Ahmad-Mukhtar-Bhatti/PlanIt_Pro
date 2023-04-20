@@ -5,12 +5,9 @@ import { useState } from "react";
 import { getUserID } from "../hooks/useGetUserID.js";
 import axios from "axios";
 
-
 const logo = require("./home/se-logogphotoaidcomcropped-1@2x.png");
 const background = require("./home/bg01-1@2x.png");
 const topbar = require("./home/topbar.svg");
-
-
 
 const DashboardAddMoney = () => {
   const navigate = useNavigate();
@@ -19,27 +16,27 @@ const DashboardAddMoney = () => {
   const userID = getUserID();
 
   const handleSaveChanges = async () => {
-    alert(`Complaint Submitted: ${comments}`)
+    alert(`Complaint Submitted: ${comments}`);
 
     try {
-      const response = await axios.post("http://localhost:3010/submitComplaints", {userID,comments});
+      const response = await axios.post(
+        "http://localhost:3010/submitComplaints",
+        { userID, comments }
+      );
 
       if (response.data.message === "Success") {
         alert("Response Submitted");
-        navigate("/home")
+        navigate("/home");
         return;
-      }
-      else{
+      } else {
         alert("Response Failed");
       }
     } catch (error) {
       console.log("An error occurred");
     }
-
-
   };
-   
-    function handleCommentsChange(event) {
+
+  function handleCommentsChange(event) {
     setComments(event.target.value);
   }
 
@@ -59,27 +56,27 @@ const DashboardAddMoney = () => {
             color: "white",
             backgroundColor: "transparent",
             fontSize: "18px",
+            border: "none",
+            outline: "none",
           }}
-          onClick={handleSaveChanges}>
+          onClick={handleSaveChanges}
+        >
           Sumbit Complaint
         </button>
       </div>
 
-      <div className="enter-the-amount"> 
-        <p style={{textAlign: "center", lineHeight: "10px"}}>Enter Your Complaint:</p> 
-    </div>
-      <img
-        className="se-logog-photoaidcom-cropped-1"
-        alt=""
-        src={logo}
-      />
+      <div className="enter-the-amount">
+        <p style={{ textAlign: "center", lineHeight: "10px" }}>
+          Enter Your Complaint:
+        </p>
+      </div>
+      <img className="se-logog-photoaidcom-cropped-1" alt="" src={logo} />
       <input
         className="atom-input-container-sizes2"
         type="text"
         placeholder="Type your Complaint here"
         value={comments}
         onChange={handleCommentsChange}
-
       />
     </div>
   );

@@ -187,7 +187,16 @@ const DashboardHomeScreen = () => {
           <img className="view-item" alt="" src={img7} />
         </button>
         <div className="dashboard-home-screen-child3" />
-        <div className="get-predictions">Get Predictions</div>
+        
+        <div className="get-predictions">
+          <Link
+            to="/getPredictions"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Get Predictions
+          </Link>
+        </div>
+
         <button className="d-box-fill">
           <img className="subtract-icon2" alt="" src={img8} />
         </button>
