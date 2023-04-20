@@ -190,8 +190,6 @@ const DashboardHomeScreen = () => {
         <div className="logout">
     
             <button onClick={logout}>Logout</button>
-            <br></br>
-            {/* <button onClick={edit_prof}>Edit Profile</button> */}
 
         </div>
     
