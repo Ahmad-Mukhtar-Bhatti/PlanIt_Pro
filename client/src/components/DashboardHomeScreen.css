@@ -6,6 +6,11 @@
   width: 72px;
   height: 70px;
 }
+.convert {
+  z-index: 100;
+  padding-left: 10%;
+  padding-top: 50%;
+}
 .bg-01-1-icon {
   width: 1440px;
   height: 1024px;

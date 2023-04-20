@@ -31,6 +31,7 @@ const DashboardHomeScreen = () => {
     const [name, setName] = useState("");
     const [bal, setBal] = useState("");
     const [pic, setPic] = useState("");
+    const [usd, setUSD] = useState(false);
 
     const userID = getUserID();
 
@@ -58,8 +59,36 @@ const DashboardHomeScreen = () => {
           getdata(userID)
     },[])
 
+    const exchangeRateAPI = 'https://api.exchangerate-api.com/v4/latest/USD';
+
   
-    
+    const convert = async (amount) => {
+        try {
+            if (!usd){
+                const exchangeRateResponse = await axios.get(exchangeRateAPI);
+                const exchangeRate = exchangeRateResponse.data.rates.PKR / exchangeRateResponse.data.rates.USD;
+                console.log(exchangeRate)
+                const amountInUSD = amount / exchangeRate;
+                setBal(amountInUSD.toFixed(2))
+                setUSD(true)
+            }
+
+            else{
+
+                const exchangeRateResponse = await axios.get(exchangeRateAPI);
+                const exchangeRate = exchangeRateResponse.data.rates.USD / exchangeRateResponse.data.rates.PKR;
+                const amountInPKR = amount/ exchangeRate;
+                setBal(amountInPKR.toFixed(2))
+                setUSD(false)
+        }
+
+
+        }
+          
+        catch (error) {
+          console.log(error);
+        }
+      }
 
 
     const logout = () => {
@@ -76,15 +105,29 @@ const DashboardHomeScreen = () => {
         <img className="bg-01-1-icon" alt="" src={img3} />
         <div className="dashboard-home-screen-child" />
         <b className="home">HOME</b>
+        
         <div className="rectangle-parent">
             <div className="group-child" />
             <div className="group-item" />
             <div className="qaboos-ali-khan">{name}</div>
+            {/* <button className="convert" onClick={convert(bal)}>Convert to USD</button> */}
+            <button className="convert" onClick={() => convert(bal)}>Convert to {usd ? "PKR" : "USD"}</button>
+        
         </div>
-        <div className="pkr-3578">PKR {bal}</div>
+
+
+        <div className="pkr-3578">{usd ? "USD" : "PKR"} {bal}</div>
+        
+            
+            
         <div className="available-balance">Available balance</div>
+
+        
+        
+        
         <div className="dashboard-home-screen-item" />
         <label className="label">.</label>
+        
         <label className="label1">.</label>
         <label className="label2">.</label>
         <div className="go-for-a">Go for a walk</div>
