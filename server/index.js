@@ -7,6 +7,10 @@ import {signupRouter} from './routes/signup.routes.js'
 import {homeRouter} from './routes/home.routes.js'
 import {addmoneyRouter} from './routes/addmoney.routes.js'
 import {removemoneyRouter} from './routes/removemoney.routes.js'
+import {addNewTaskRouter} from './routes/addNewTask.routes.js'
+import { ToDoRouter } from './routes/ToDo.routes.js'
+import { removeTaskRouter } from './routes/removeTask.routes.js'
+import { adjustTaskRouter } from './routes/adjustTask.routes.js'
 
 dotenv.config()
 
@@ -23,6 +27,10 @@ App.use('/signup',signupRouter);
 App.use('/home',homeRouter);
 App.use('/addmoney',addmoneyRouter);
 App.use('/removemoney',removemoneyRouter);
+App.use('/addNewTask',addNewTaskRouter)
+App.use('/ToDo', ToDoRouter)
+App.use('/removeTask', removeTaskRouter)
+App.use('/adjustTask', adjustTaskRouter)
 
 const startServer = async () => {
     try{

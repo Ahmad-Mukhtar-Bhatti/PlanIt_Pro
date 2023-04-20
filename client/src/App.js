@@ -16,6 +16,8 @@ import DashboardHelp from './components/helpPage';
 // to do list options
 import DashboardEditToDoList from './components/DashboardEditToDoList';
 import DashboardAddNewTask from './components/DashboardAddNewTask';
+import DashboardAdjustTasks from './components/DashboardAdjustTasks';
+
 
 
 function App() {
@@ -39,7 +41,7 @@ function App() {
 
           <Route path = "/editToDoList" element = {<DashboardEditToDoList/>} />
           <Route path = "/addNewTask" element = {<DashboardAddNewTask/>} />
-          
+          <Route path = "/adjustTasks" element = {<DashboardAdjustTasks/>} />
 
           
         </Routes>
