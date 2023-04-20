@@ -12,6 +12,8 @@ import DashboardRemoveMoney from './components/DashboardRemoveMoney';
 import DashboardToDoList from './components/DashboardToDoList';
 import DashboardPredictions from './components/DashboardPredictions';
 import DashboardHelp from './components/helpPage';
+import DashboardPieChart from './components/piechart';
+
 
 // to do list options
 import DashboardEditToDoList from './components/DashboardEditToDoList';
@@ -37,6 +39,7 @@ function App() {
           <Route path = "/ToDoList" element = {<DashboardToDoList/>} />
           <Route path = "/getPredictions" element = {<DashboardPredictions/>} />
           <Route path = "/helppage" element = {<DashboardHelp/>} />
+          <Route path = "/piechart" element = {<DashboardPieChart/>} />
 
 
           <Route path = "/editToDoList" element = {<DashboardEditToDoList/>} />

@@ -172,7 +172,14 @@ const DashboardHomeScreen = () => {
         </button>
         <div className="dashboard-home-screen-child2" />
 
-        <div className="view-history">Budget PieChart</div>
+        <div className="view-history">
+          <Link
+            to="/piechart"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Budget Chart
+          </Link>
+        </div>
 
         <button className="view">
           <img className="view-child" alt="" src={img6} />

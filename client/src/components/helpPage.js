@@ -11,9 +11,7 @@ function App() {
   const navigate = useNavigate();
 
   const handleSaveChanges = () => {
-    console.log("clicked home from help");
     navigate("/home");
-    console.log("xfdfxfx home from help");
   };
 
   return (
