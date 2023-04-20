@@ -200,7 +200,16 @@ const DashboardHomeScreen = () => {
         <img className="dashboard-home-screen-child5" alt="" src={img9} />
         <div className="pay-bills">Pay Bills</div>
         <button className="dashboard-home-screen-child6" />
-        <div className="submit-complaint">Submit Complaint</div>
+
+        <div className="submit-complaint">
+          <Link
+            to="/submitComplaints"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Submit Complaint
+          </Link>
+        </div>
+
         <button className="dashboard-home-screen-child7" />
 
         <div className="help">
