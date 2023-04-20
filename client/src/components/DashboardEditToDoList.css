@@ -267,6 +267,14 @@
   width: 199px;
   height: 60px;
 }
+.task-box2 {
+  border: 1px solid black;
+  background-color: #e3cfe9;
+  width: 550px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
 .editt-adjust-tasks {
   position: absolute;
   top: 154px;
@@ -322,19 +330,426 @@
   top: 382px;
   width: 193px;
 }
-.to-do-list-checklist {
+.to-do-list-checklist89 {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
-  left: 311px;
+  left: 370px;
   top: 210px;
+  height: 350px; /* set a fixed height for the container */
+  overflow-y: scroll; /* add a vertical scroll bar */
 }
 .editt-buy-groceries {
   top: 332px;
   width: 202px;
 }
-.editt-checklist1 {
+
+.editt-checklist {
+  position: absolute;
+  top: 204px;
+  left: 355px;
+  font-size: 40px;
+  display: inline-block;
+  width: 193px;
+  height: 47px;
+}
+.editt-dashboard-edit-to-do-list-child6,
+.editt-rectangle-icon {
+  position: absolute;
+  top: 285px;
+  left: 368px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.editt-dashboard-edit-to-do-list-child6 {
+  top: 484px;
+}
+.editt-dashboard-edit-to-do-list-child7,
+.editt-dashboard-edit-to-do-list-child8,
+.editt-dashboard-edit-to-do-list-child9 {
+  position: absolute;
+  top: 436px;
+  left: 368px;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+.editt-dashboard-edit-to-do-list-child8,
+.editt-dashboard-edit-to-do-list-child9 {
+  top: 386px;
+}
+.editt-dashboard-edit-to-do-list-child9 {
+  top: 335px;
+}
+.editt-pay-bills {
+  position: absolute;
+  top: 281px;
+  left: 411px;
+  display: inline-block;
+  width: 125px;
+  height: 29px;
+}
+.editt-se-logog-photoaidcom-cropped-1 {
+  position: absolute;
+  top: 9px;
+  left: 13px;
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+.editt-dashboard-edit-to-do-list {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
+.editt-bg-01-1-icon,
+.editt-top-bar-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 70px;
+}
+.editt-bg-01-1-icon {
+  width: 1441px;
+  height: 1024px;
+  object-fit: cover;
+}
+.editt-dashboard-edit-to-do-list-child {
+  position: absolute;
+  top: 0;
+  left: -1px;
+  background-color: #251f47;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.16);
+  width: 1441px;
+  height: 72px;
+}
+.editt-to-do-list {
+  position: absolute;
+  top: 28px;
+  left: 690px;
+  font-size: 16px;
+  display: inline-block;
+  font-family: var(--font-poppins);
+  width: 97px;
+  height: 25px;
+}
+.editt-dashboard-edit-to-do-list-item {
+  position: absolute;
+  top: 121px;
+  left: 341px;
+  border-radius: 33px;
+  background-color: #4b3c9d;
+  width: 642px;
+  height: 586px;
+}
+.editt-done,
+.editt-done1,
+.editt-done2,
+.editt-remove,
+.editt-remove1,
+.editt-remove2 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 389px;
+  left: 885px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-inter);
+  color: var(--color-crimson);
+  text-align: left;
+  display: inline-block;
+  width: 79px;
+  height: 21px;
+}
+.editt-done,
+.editt-done1,
+.editt-done2,
+.editt-remove1,
+.editt-remove2 {
+  left: 755px;
+  color: var(--color-lime);
+  width: 56px;
+}
+.editt-done1,
+.editt-done2,
+.editt-remove1,
+.editt-remove2 {
+  top: 340px;
+  left: 885px;
+  color: var(--color-crimson);
+  width: 79px;
+}
+.editt-done1,
+.editt-done2,
+.editt-remove2 {
+  top: 338px;
+  left: 755px;
+  color: var(--color-lime);
+  width: 56px;
+}
+.editt-done2,
+.editt-remove2 {
+  top: 289px;
+  left: 885px;
+  color: var(--color-crimson);
+  width: 79px;
+}
+.editt-done2 {
+  left: 755px;
+  color: var(--color-lime);
+  width: 56px;
+}
+.editt-cancel-icon {
+  position: absolute;
+  top: 281px;
+  left: 828px;
+  width: 45px;
+  height: 40px;
+}
+.editt-cancel-icon1,
+.editt-cancel-icon2,
+.editt-cancel-icon3,
+.editt-cancel-icon4 {
+  position: absolute;
+  top: 479px;
+  left: 828px;
+  width: 45px;
+  height: 40px;
+}
+.editt-cancel-icon2,
+.editt-cancel-icon3,
+.editt-cancel-icon4 {
+  top: 381px;
+}
+.editt-cancel-icon3,
+.editt-cancel-icon4 {
+  top: 330px;
+}
+.editt-cancel-icon4 {
+  top: 431px;
+}
+.editt-dashboard-edit-to-do-list-inner {
+  position: absolute;
+  height: 1.96%;
+  width: 1.41%;
+  top: 28.41%;
+  right: 48.21%;
+  bottom: 69.63%;
+  left: 50.38%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.editt-dashboard-edit-to-do-list-child1,
+.editt-dashboard-edit-to-do-list-child2,
+.editt-dashboard-edit-to-do-list-child3,
+.editt-line-icon {
+  position: absolute;
+  height: 1.96%;
+  width: 1.41%;
+  top: 47.8%;
+  right: 48.22%;
+  bottom: 50.25%;
+  left: 50.36%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.editt-dashboard-edit-to-do-list-child1,
+.editt-dashboard-edit-to-do-list-child2,
+.editt-dashboard-edit-to-do-list-child3 {
+  top: 43.11%;
+  bottom: 54.93%;
+}
+.editt-dashboard-edit-to-do-list-child2,
+.editt-dashboard-edit-to-do-list-child3 {
+  top: 38.23%;
+  bottom: 59.82%;
+}
+.editt-dashboard-edit-to-do-list-child3 {
+  top: 33.25%;
+  bottom: 64.8%;
+}
+.editt-remove3 {
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 488px;
+  left: 885px;
+  color: var(--color-crimson);
+  width: 79px;
+}
+.editt-done3,
+.editt-remove3,
+.editt-remove4 {
+  border: 0;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-inter);
+  text-align: left;
+  display: inline-block;
+  height: 21px;
+}
+.editt-done3 {
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 488px;
+  left: 755px;
+  color: var(--color-lime);
+  width: 56px;
+}
+.editt-remove4 {
+  top: 440px;
+  left: 885px;
+  color: var(--color-crimson);
+  width: 79px;
+}
+.editt-done4,
+.editt-rectangle-button,
+.editt-remove4 {
+  cursor: pointer;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+}
+.editt-done4 {
+  border: 0;
+  top: 440px;
+  left: 755px;
+  font-size: var(--font-size-xl);
+  font-family: var(--font-inter);
+  color: var(--color-lime);
+  text-align: left;
+  display: inline-block;
+  width: 56px;
+  height: 21px;
+}
+.editt-rectangle-button {
+  border: 4px solid var(--color-plum);
+  top: 138px;
+  left: 778px;
+  border-radius: var(--br-21xl);
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 199px;
+  height: 60px;
+}
+.editt-add-new-task {
+  position: absolute;
+  top: 155px;
+  left: 825px;
+  font-size: var(--font-size-5xl);
+  display: inline-block;
+  width: 176px;
+  height: 28px;
+}
+.editt-adjust-task {
+  position: absolute;
+  top: 155px;
+  left: 597px;
+  font-size: var(--font-size-5xl);
+  display: inline-block;
+  width: 176px;
+  height: 28px;
+}
+.editt-dashboard-edit-to-do-list-child4 {
+  cursor: pointer;
+  border: 4px solid var(--color-plum);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 138px;
+  left: 543px;
+  border-radius: var(--br-21xl);
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 199px;
+  height: 60px;
+}
+.editt-adjust-tasks {
+  position: absolute;
+  top: 154px;
+  left: 566px;
+  font-size: var(--font-size-5xl);
+  display: inline-block;
+  width: 153px;
+  height: 28px;
+}
+
+.editt-dashboard-edit-to-do-list-child5 {
+  cursor: pointer;
+  border: 4px solid var(--color-plum);
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 579px;
+  left: 548px;
+  border-radius: var(--br-21xl);
+  background: linear-gradient(90deg, #0844df, #2aa4ae 99.99%, #756989);
+  box-sizing: border-box;
+  width: 254px;
+  height: 78px;
+}
+.editt-save-changes {
+  position: absolute;
+  top: 604px;
+  left: 595px;
+  font-size: var(--font-size-5xl);
+  display: inline-block;
+  width: 176px;
+  height: 28px;
+}
+.editt-book-a-vacation,
+.editt-buy-groceries,
+.editt-call-a-friend,
+.editt-go-for-a {
+  position: absolute;
+  top: 481px;
+  left: 411px;
+  display: inline-block;
+  width: 407px;
+  height: 29px;
+}
+.editt-book-a-vacation,
+.editt-buy-groceries,
+.editt-go-for-a {
+  top: 433px;
+  width: 237px;
+}
+.editt-buy-groceries,
+.editt-go-for-a {
+  top: 382px;
+  width: 193px;
+}
+.to-do-list-checklist11 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 311px;
+  top: 210px;
+  color: white;
+  font-size: 24px;
+}
+.editt-buy-groceries {
+  top: 332px;
+  width: 202px;
+}
+.editt-checklist11 {
   margin: 0;
+  color: white;
 }
 .editt-checklist {
   position: absolute;

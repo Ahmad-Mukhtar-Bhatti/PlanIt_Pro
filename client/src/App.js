@@ -45,6 +45,7 @@ function App() {
 
           <Route path = "/editToDoList" element = {<DashboardEditToDoList/>} />
           <Route path = "/addNewTask" element = {<DashboardAddNewTask/>} />
+          <Route path = "/adjustTasks" element = {<DashboardAdjustTasks/>} />
           <Route path = "/submitComplaints" element = {<DashboardSubmitComplaint/>} />
 
           

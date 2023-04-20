@@ -12,7 +12,7 @@ router.delete('/', async (req, res) => {
 
     if (deletedTask.deletedCount === 1) {
         console.log("Task deleted:", task);
-        const Tasks = await todoModel.find({ U_id: uid });
+        const Tasks = await todoModel.find({ U_id: uid }).sort({ Priority: -1 });
         res.json({ message: Tasks });
     } else {
         console.log("Task not found:", task);

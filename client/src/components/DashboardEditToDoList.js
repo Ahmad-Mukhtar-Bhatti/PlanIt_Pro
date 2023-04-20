@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 import axios from "axios";
 import { getUserID } from "../hooks/useGetUserID.js";
+import { useHistory } from "react-router-dom";
 
 const logo = require("./home/se-logogphotoaidcomcropped-1@2x.png");
 const background = require("./home/bg01-1@2x.png");
@@ -16,6 +17,10 @@ const cancel = require("./home/cancel.svg");
 
 
 const DashboardEditToDoList = (props) => {
+  const handleButtonClick = () => {
+    console.log("Button clicked");
+    // Add code to navigate to a specific page here
+  };
   const handleDoneClick = async (task) => {
     const uid = getUserID();
     console.log(`Task "${task.Description}" marked as done`);
@@ -85,6 +90,8 @@ const DashboardEditToDoList = (props) => {
       <div className="editt-adjust-task">
         <Link to="/adjustTasks" style={{ textDecoration: "none", color: "white"}}> Adjust Tasks</Link>
       </div>
+
+
       <button className="editt-dashboard-edit-to-do-list-child5" />
 
       <div className="editt-save-changes">
@@ -96,10 +103,11 @@ const DashboardEditToDoList = (props) => {
           Save Changes
         </Link>
       </div>
-      <div className="to-do-list-checklist">
-      <p className="to-do-list-checklist1">Checklist:</p>
+
+      <div className="to-do-list-checklist89">
+      <p className="to-do-list-checklist11">Checklist:</p>
       {toDoList.map(task => (
-        <div key={task._id}>
+        <div key={task._id} className="task-box2">
           <p className="task-description" style={{ marginLeft: 10 }}>{task.Description}</p>
           <button
             className="done-button"
