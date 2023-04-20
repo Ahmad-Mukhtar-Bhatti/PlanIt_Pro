@@ -111,8 +111,8 @@ const DashboardHomeScreen = () => {
             <div className="group-item" />
             <div className="qaboos-ali-khan">{name}</div>
             {/* <button className="convert" onClick={convert(bal)}>Convert to USD</button> */}
-            <div className="available-balance">
-            <button className="convert" onClick={() => convert(bal)}>Convert to {usd ? "PKR" : "USD"}</button>
+            <div className="pkr-3578">
+                <button className="convert" onClick={() => convert(bal)}>Convert to {usd ? "PKR" : "USD"}</button>
             </div>
             
         
