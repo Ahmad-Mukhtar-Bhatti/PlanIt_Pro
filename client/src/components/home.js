@@ -55,17 +55,24 @@ const DashboardHomeScreen = () => {
             }
           };
 
-    getName(u_name);
-    // console.log("yess");
+          getdata(userID)
+    },[])
+
+  
+    
+
+
+    const logout = () => {
+        setCookies("access_token","");
+        window.localStorage.removeItem("User_ID")
+        navigate("/login")
+    }
 
   return (
 
     <div className="body">
         <div className="dashboard-home-screen">
         <img className="top-bar-icon" alt="" src={img2} />
-    
-        {/* <button className="bg-01-1-icon" onClick={logout}>Yessir</button> */}
-
         <img className="bg-01-1-icon" alt="" src={img3} />
         <div className="dashboard-home-screen-child" />
         <b className="home">HOME</b>
@@ -124,7 +131,7 @@ const DashboardHomeScreen = () => {
             <img className="subtract-icon2" alt="" src={img8} />
         </button>
         <button className="dashboard-home-screen-child4" />
-        <div className="edit-account" onClick = {edit_prof}>Edit Account</div>
+        <div className="edit-account">Edit Account</div>
         
         <div className="checklist">
             <p className="checklist1">Checklist:</p>
@@ -140,7 +147,7 @@ const DashboardHomeScreen = () => {
         <div className="submit-complaint">Submit Complaint</div>
         <button className="dashboard-home-screen-child7" />
         <div className="help">Help</div>
-        <img className="image-2-icon" alt="" src={img10} />
+        <img className="image-2-icon" alt="" src={pic} />
         <img
             className="se-logog-photoaidcom-cropped-1"
             alt=""
@@ -173,13 +180,7 @@ const DashboardHomeScreen = () => {
     
             <button onClick={logout}>Logout</button>
 
-    
-            
-
         </div>
-    
-
-
         
         <img className="wallet-alt-icon2" alt="" src={img14} />
         </div>
