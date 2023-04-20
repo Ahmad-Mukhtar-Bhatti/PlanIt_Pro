@@ -3,24 +3,32 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 72px;
+  width: auto;
   height: 70px;
 }
 
 .bg-01-1-icon {
-  width: 1440px;
-  height: 1024px;
-  object-fit: cover;
+  background-image: url('https://example.com/your-image.jpg');
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* use viewport height for full-screen background */
+  z-index: -1; /* ensure the background is behind other elements */
 }
+
 .dashboard-home-screen-child {
   position: absolute;
   top: 0;
-  left: -1px;
+  left: 0;
   background-color: #251f47;
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.16);
-  width: 1441px;
+  width: 100%;
   height: 72px;
+  z-index: 1; /* ensure the element is above the background */
 }
+
 .home {
   position: absolute;
   top: 24px;
@@ -30,6 +38,7 @@
   font-family: Poppins;
   width: 57px;
   height: 25px;
+  z-index: 200;
 }
 .group-child {
   position: absolute;
@@ -474,12 +483,13 @@
 }
 .image-2-icon,
 .se-logog-photoaidcom-cropped-1 {
-  position: absolute;
+  position: relative;
   top: 119px;
   left: 645px;
   width: 127px;
   height: 109px;
   object-fit: cover;
+  z-index: 9999; /* set a high z-index to ensure the logo appears on top of everything else */
 }
 .se-logog-photoaidcom-cropped-1 {
   top: 9px;
@@ -590,7 +600,7 @@
 .dashboard-home-screen {
   position: relative;
   background: linear-gradient(135deg, rgb(34,193,195) 0%,     rgb(220, 39, 202) 100%) !important;
-  width: 100%;
+  width: auto;
   height: 1024px;
   overflow: hidden;
   text-align: left;

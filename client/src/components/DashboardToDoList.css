@@ -7,9 +7,13 @@
   height: 70px;
 }
 .bg-01-1-icon {
-  width: 1440px;
-  height: 1024px;
-  object-fit: cover;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 1%;
+  height: 100%;
+  z-index: -199;
 }
 .dashboard-to-do-list-child {
   position: absolute;
@@ -17,7 +21,7 @@
   left: -1px;
   background-color: #251f47;
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.16);
-  width: 1440px;
+  width: 1000%;
   height: 72px;
 }
 .d2-to-do-list {
@@ -234,12 +238,12 @@
 }
 .dashboard-to-do-list {
   position: relative;
-  background-color: var(--color-white);
-  width: 100%;
+  background: linear-gradient(135deg, rgb(34,193,195) 0%,     rgb(220, 39, 202) 100%) !important;
+  width: auto;
   height: 1024px;
   overflow: hidden;
   text-align: left;
-  font-size: var(--font-size-11xl);
-  color: var(--color-white);
-  font-family: var(--font-inter);
+  font-size: 30px;
+  color: #fff;
+  font-family: Inter;
 }

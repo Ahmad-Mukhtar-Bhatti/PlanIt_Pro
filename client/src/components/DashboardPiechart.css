@@ -1,12 +1,11 @@
 /* Basic styling for the chart container */
 .chart-container {
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     top: 150px;
     margin: 0 auto;
     position: relative;
   }
-  
   /* Styling for the chart title */
   .chart-title {
     font-size: 24px;

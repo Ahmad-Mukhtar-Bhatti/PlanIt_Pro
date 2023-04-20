@@ -166,10 +166,11 @@ const DashboardHomeScreen = () => {
             Debit
           </Link>
         </div>
-
+        
         <button className="remove-fill">
           <img className="subtract-icon1" alt="" src={img5} />
         </button>
+
         <div className="dashboard-home-screen-child2" />
 
         <div className="view-history">

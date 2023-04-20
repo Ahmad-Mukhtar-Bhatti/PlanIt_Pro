@@ -93,7 +93,6 @@ const DashboardRemoveMoney = () => {
           <option value="Laundry">Laundry</option>
           <option value="Rent">Rent</option>
           <option value="Miscellaneous">Miscellaneous</option>
-          <option value="Other">Other</option>
         </Select>
       </Stack>
     </div>
