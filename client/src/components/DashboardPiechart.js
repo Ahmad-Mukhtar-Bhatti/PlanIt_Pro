@@ -48,20 +48,22 @@ const PieChart = () => {
           <div className="chart-container">
             <Pie data={data} options={options} />
           </div>
-          <div className="add-money1">
-        <button
-          style={{
-            textDecoration: "none",
-            color: "white",
-            border: "none",
-            backgroundColor: "transparent",
-            fontSize: "25px"
-          }}
-          onClick={handleSaveChanges}
-        >
-          Go Home
-        </button>
-      </div>
+
+          <div className="piechart-convert">
+            <button
+              
+              onClick={handleSaveChanges}
+              style={{
+                textDecoration: "none",
+                color: "white",
+                backgroundColor: "transparent",
+                fontSize: "18px",
+              }}
+            >
+              Go Home
+            </button>
+        </div>
+
         </div>
       </div>
     );
