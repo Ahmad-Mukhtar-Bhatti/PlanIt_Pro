@@ -1,7 +1,8 @@
-import "./piechart.css";
+import "./DashboardPiechart.css";
 import React from "react";
 import { Pie } from "react-chartjs-2";
 import Chart from "chart.js/auto";
+import { useNavigate } from "react-router-dom";
 
 const img2 = require("./home/topbar.svg");
 const img3 = require("./home/bg01-1@2x.png");
@@ -29,6 +30,13 @@ const PieChart = () => {
         }
       }
     };
+
+    const navigate = useNavigate();
+
+    const handleSaveChanges = () => {
+      navigate("/home");
+    };
+  
   
     return (
       <div className="body">
@@ -40,6 +48,20 @@ const PieChart = () => {
           <div className="chart-container">
             <Pie data={data} options={options} />
           </div>
+          <div className="add-money1">
+        <button
+          style={{
+            textDecoration: "none",
+            color: "white",
+            border: "none",
+            backgroundColor: "transparent",
+            fontSize: "25px"
+          }}
+          onClick={handleSaveChanges}
+        >
+          Go Home
+        </button>
+      </div>
         </div>
       </div>
     );

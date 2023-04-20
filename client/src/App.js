@@ -12,7 +12,7 @@ import DashboardRemoveMoney from './components/DashboardRemoveMoney';
 import DashboardToDoList from './components/DashboardToDoList';
 import DashboardPredictions from './components/DashboardPredictions';
 import DashboardHelp from './components/helpPage';
-import DashboardPieChart from './components/piechart';
+import DashboardPieChart from './components/DashboardPiechart';
 
 
 // to do list options
