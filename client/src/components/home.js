@@ -11,16 +11,16 @@ const img = require("./home/se-logogphotoaidcomcropped-1@2x.png");
 const img2 = require("./home/topbar.svg");
 const img3 = require("./home/bg01-1@2x.png");
 const img4 = require("./home/rectangle-20@2x.png");
-const img5 = require("./home/subtract1.svg");
-const img6 = require("./home/ellipse-65.svg");
-const img7 = require("./home/ellipse-66.svg");
-const img8 = require("./home/subtract2.svg");
+const img5 = require("./home/subtract1.png");
+const img6 = require("./home/ellipse-65.png");
+const img7 = require("./home/ellipse-66.png");
+const img8 = require("./home/subtract2.png");
 const img9 = require("./home/rectangle-20@2x.png");
-const img11 = require("./home/iconoirreceivedollars.svg");
-const img12 = require("./home/iconoirsenddollars.svg");
-const img13 = require("./home/iconoirsenddollars.svg");
-const img14 = require("./home/wallet-alt.svg");
-const img15 = require("./home/subtract.svg");
+const img11 = require("./home/iconoirreceivedollars.png");
+const img12 = require("./home/iconoirsenddollars.png");
+const img13 = require("./home/iconoirsenddollars.png");
+const img14 = require("./home/wallet-alt.png");
+const img15a = require("./home/subtract.png");
 
 const DashboardHomeScreen = () => {
   const navigate = useNavigate();
@@ -145,7 +145,7 @@ const DashboardHomeScreen = () => {
 
         <div className="rectangle-div" />
         <button className="add-round-fill">
-          <img className="subtract-icon" alt="" src={img15} />
+          <img className="subtract-icon" alt="" src={img15a} />
         </button>
 
         <div className="credit">
@@ -226,7 +226,7 @@ const DashboardHomeScreen = () => {
         <div className="expense-dinner">$18.00 expense “Dinner”</div>
         <div className="income-salary">$1,500.00 income “Salary”</div>
         <img className="iconoirreceive-dollars" alt="" src={img11} />
-        <div className="expense-lauren">$32,15 expense “Lauren”</div>
+        <div className="expense-lauren">$32,15 expense “Laundry”</div>
         <img className="iconoirsend-dollars" alt="" src={img12} />
         <img className="iconoirsend-dollars1" alt="" src={img13} />
         <div className="latest-transactions">Latest transactions:</div>

@@ -236,8 +236,9 @@
   mix-blend-mode: normal;
 }
 .subtract-icon1 {
-  position: relative;
-  left: 45px;
+  position: absolute;
+  left: -27px;
+  top: 11px;
   width: 74.82px;
   height: 75px;
 }
