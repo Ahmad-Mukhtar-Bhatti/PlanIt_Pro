@@ -11,6 +11,7 @@ import DashboardAddMoney from './components/DashboardAddMoney';
 import DashboardRemoveMoney from './components/DashboardRemoveMoney';
 import DashboardToDoList from './components/DashboardToDoList';
 import DashboardPredictions from './components/DashboardPredictions';
+import DashboardHelp from './components/helpPage';
 
 // to do list options
 import DashboardEditToDoList from './components/DashboardEditToDoList';
@@ -33,6 +34,7 @@ function App() {
           <Route path = "/removemoney" element = {<DashboardRemoveMoney/>} />
           <Route path = "/ToDoList" element = {<DashboardToDoList/>} />
           <Route path = "/getPredictions" element = {<DashboardPredictions/>} />
+          <Route path = "/helppage" element = {<DashboardHelp/>} />
 
 
           <Route path = "/editToDoList" element = {<DashboardEditToDoList/>} />
