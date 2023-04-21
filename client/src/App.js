@@ -22,6 +22,8 @@ import DashboardEditToDoList from './components/DashboardEditToDoList';
 import DashboardAddNewTask from './components/DashboardAddNewTask';
 import DashboardAdjustTasks from './components/DashboardAdjustTasks';
 
+
+
 function App() {
   return (
     <StrictMode>
@@ -41,6 +43,7 @@ function App() {
           <Route path = "/getPredictions" element = {<DashboardPredictions/>} />
           <Route path = "/helppage" element = {<DashboardHelp/>} />
           <Route path = "/piechart" element = {<DashboardPieChart/>} />
+          <Route path = "/edit" element = {<Editprof/>} />
 
 
           <Route path = "/editToDoList" element = {<DashboardEditToDoList/>} />

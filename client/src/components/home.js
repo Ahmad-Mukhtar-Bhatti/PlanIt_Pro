@@ -201,7 +201,15 @@ const DashboardHomeScreen = () => {
           <img className="subtract-icon2" alt="" src={img8} />
         </button>
         <button className="dashboard-home-screen-child4" />
-        <div className="edit-account">Edit Account</div>
+        <div className="edit-account">
+        <Link
+            to="/edit"
+            style={{ textDecoration: "none", color: "white" }}
+          >
+            Edit Profile
+          </Link>
+        </div>
+       
 
         <div className="checklist">
           <p className="checklist1">Checklist:</p>
