@@ -11,3 +11,26 @@
   height: 1024px;
   object-fit: cover;
 }
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}.chart-container img {
+  max-width: 250%;
+  max-height: 250%;
+}
+
+.predictions-convert {
+  position: absolute;
+  display: inline-block;
+}
+.predictions-convert {
+  top: 650px;
+  left: 700px;
+  font-size: 60px;
+  letter-spacing: -0.01em;
+  line-height: 34px;
+  font-weight: 600;
+  width: 319px;
+  height: 66px;
+}
