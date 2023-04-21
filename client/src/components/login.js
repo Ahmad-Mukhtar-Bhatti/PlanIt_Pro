@@ -27,7 +27,12 @@ const Login = (props) => {
 
       console.log(response.data.message);
 
-      if(response.data.message !== "invalid"){
+      if(username === "Admin"){
+        console.log("Admin is");
+        navigate("/admin");
+      }
+
+      else if(response.data.message !== "invalid"){
         navigate("/home", { state: {username} });
       }
       else{
