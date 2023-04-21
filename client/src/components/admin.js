@@ -66,6 +66,22 @@ const AdminScreen = () => {
   };
 
 
+  const getComplaints = async () => {
+    try {
+      // console.log("yesssyess")
+      const response = await axios.post("http://localhost:3010/admin/complaints", {});
+      console.log("Received complaints:", response.data.users);
+      setUsers(response.data.users);
+      handleShow();
+
+
+    } catch (error) {
+      console.log("An error occurred");
+    }
+  };
+
+
+
 
   // const findUser = async () => {
   //   try {
@@ -121,8 +137,10 @@ const AdminScreen = () => {
             </form>
           )}
           {/* <button onClick = {findUser}>Find User</button> */}
-          <button>Edit Profile</button>
+          <button onClick={getComplaints}>View Complaints</button>
         </div>
+
+
 
         {/* Users Modal */}
         <Modal show={show} onHide={handleClose} dialogClassName="scrollable-modal">
@@ -134,14 +152,18 @@ const AdminScreen = () => {
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Name</th>
+                  {users.length > 0 && Object.keys(users[0]).map((key) => (
+                    <th key={key}>{key}</th>
+                  ))}
                 </tr>
               </thead>
               <tbody>
                 {users.map((user, index) => (
                   <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>{user.name}</td>
+                    {Object.keys(user).map((key) => (
+                      <td key={key}>{user[key]}</td>
+                    ))}
                   </tr>
                 ))}
               </tbody>
@@ -151,6 +173,11 @@ const AdminScreen = () => {
             <button onClick={handleClose}>Close</button>
           </Modal.Footer>
         </Modal>
+
+
+
+
+
       </div>
     </div>
   );
