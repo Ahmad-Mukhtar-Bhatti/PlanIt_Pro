@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+import numpy as np
 import random
 import matplotlib.pyplot as plt
 
@@ -5,31 +7,19 @@ budget = 20000
 expense = {1:500, 2:700, 3:350, 4:1200, 5:200,6:20,7:300,8:240,9:1000,10:130,11:700,12:700,13:60,14:140,15:500,16:500,17:500,18:900,19:700,20:460,21:1000}
 
 def generate(budget, expense):
-    # Calculate the total of expenses so far
     total_expense = sum(expense.values())
-
-    # Calculate the remaining budget
     remaining_budget = budget - total_expense
-
-    # Calculate the number of remaining days
     num_remaining_days = 30 - len(expense)
-
-    # Calculate the minimum and maximum values of expenses in the given days
     min_value = min(expense.values())
     max_value = max(expense.values())
-
-    # Generate suggestions between the minimum and maximum values
     suggestions = {}
     for day in range(21, 31):
         suggestion = random.randint(min_value, max_value)
         suggestion = round(suggestion, -1) # round to nearest 10
         suggestions[day] = suggestion
 
-    # Calculate the total of suggestions
     total_suggestions = sum(suggestions.values())
 
-    # If the total of suggestions is greater than the remaining budget,
-    # adjust the suggestions to fit the budget
     if total_suggestions > remaining_budget:
         factor = remaining_budget / total_suggestions
         for day in suggestions:
