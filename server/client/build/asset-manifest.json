@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ebbd9259.css",
+    "main.js": "/static/js/main.9ee6e1f0.js",
+    "static/media/bg01-1@2x.png": "/static/media/bg01-1@2x.a6906f042b0d3d9ecfc3.png",
+    "static/media/planitpro_logo.png": "/static/media/planitpro_logo.f9242c9f5312972289c6.png",
+    "static/media/graph.png": "/static/media/graph.80c59ee1dc16567c4d95.png",
+    "static/media/se-logogphotoaidcomcropped-1@2x.png": "/static/media/se-logogphotoaidcomcropped-1@2x.640926854460793a8b77.png",
+    "static/media/trace.svg": "/static/media/trace.d4ab515d5ac9dd499054e8d54d1293cd.svg",
+    "static/media/topbar.svg": "/static/media/topbar.78517c7feb0bcce1eb39a46a3ae5a786.svg",
+    "index.html": "/index.html",
+    "static/media/plus.svg": "/static/media/plus.70873ea83db44dae1ed4448c30b77de5.svg",
+    "static/media/cancel.svg": "/static/media/cancel.7c6d64108ef47e8217737a9d049eba91.svg",
+    "static/media/line-4.svg": "/static/media/line-4.35b9850e4c3eba7e4e299150008d2f46.svg",
+    "static/media/line-5.svg": "/static/media/line-5.c41374db9ac847bef82ae199d8da78c5.svg",
+    "static/media/line-41.svg": "/static/media/line-41.bf5d2a71db3830a684afc89523027a31.svg",
+    "main.ebbd9259.css.map": "/static/css/main.ebbd9259.css.map",
+    "main.9ee6e1f0.js.map": "/static/js/main.9ee6e1f0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ebbd9259.css",
+    "static/js/main.9ee6e1f0.js"
+  ]
+}

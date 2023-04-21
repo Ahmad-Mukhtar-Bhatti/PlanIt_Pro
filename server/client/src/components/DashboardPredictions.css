@@ -1,0 +1,43 @@
+.bg-01-1-icon,
+.pred_top-bar-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 72px;
+  height: 70px;
+}
+.bg-01-1-icon {
+  width: 1440px;
+  height: 1024px;
+  object-fit: cover;
+}
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}.chart-container img {
+  max-width: 250%;
+  max-height: 250%;
+}
+
+.predictions-convert {
+  position: absolute;
+  display: inline-block;
+}
+.predictions-convert {
+  top: 650px;
+  left: 700px;
+  font-size: 60px;
+  letter-spacing: -0.01em;
+  line-height: 34px;
+  font-weight: 600;
+  width: 319px;
+  height: 66px;
+}
+.chart-container1 {
+  width: 300px;
+  height: 300px;
+  top: 150px;
+  margin: 0 auto;
+  position: relative;
+}

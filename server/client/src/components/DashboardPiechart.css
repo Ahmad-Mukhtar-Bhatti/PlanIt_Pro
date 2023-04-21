@@ -1,0 +1,62 @@
+/* Basic styling for the chart container */
+.chart-container {
+    width: 450px;
+    height: 450px;
+    top: 150px;
+    margin: 0 auto;
+    position: relative;
+  }
+  /* Styling for the chart title */
+  .chart-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the chart legend */
+  .chart-legend {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  
+  .chart-legend li {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+    
+  
+  .chart-legend li span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+  
+  /* Media query for responsive design */
+  @media screen and (max-width: 768px) {
+    .chart-container {
+      width: 100%;
+      height: 300px;
+    }
+  }
+
+  .piechart-convert {
+    position: absolute;
+    display: inline-block;
+  }
+  .piechart-convert {
+    top: 600px;
+    left: 700px;
+    font-size: 60px;
+    letter-spacing: -0.01em;
+    line-height: 34px;
+    font-weight: 600;
+    width: 319px;
+    height: 66px;
+  }

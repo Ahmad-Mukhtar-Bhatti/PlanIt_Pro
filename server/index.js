@@ -42,10 +42,17 @@ App.use('/admin', adminallRouter);
 App.use('/getPredictions', getPredictionsRouter)
 App.use('/edit', EditRouter)
 
+const PORT=process.env.PORT || 3010;
+
+
+if(process.env.NODE_ENV === 'production'){
+    App.use(express.static('client/build'))
+}
+
 const startServer = async () => {
     try{
         connectDB(process.env.MONGODB_URL)
-        App.listen(3010, () => console.log('server listening on 3010'))
+        App.listen(PORT, () => console.log('server listening on 3010'))
     }
     catch(error){
         console.error(error)
