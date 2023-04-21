@@ -14,6 +14,7 @@ import { adjustTaskRouter } from './routes/adjustTask.routes.js'
 import { piechartRouter } from './routes/piechart.routes.js'
 import { complaintsRouter } from './routes/complaints.routes.js'
 import { getPredictionsRouter } from './routes/getpredictions.routes.js'
+import { EditRouter } from './routes/edit.routes.js'
 
 dotenv.config()
 
@@ -37,6 +38,7 @@ App.use('/adjustTask', adjustTaskRouter)
 App.use('/submitComplaints', complaintsRouter)
 App.use('/piechart', piechartRouter)
 App.use('/getPredictions', getPredictionsRouter)
+App.use('/edit', EditRouter)
 
 const startServer = async () => {
     try{
