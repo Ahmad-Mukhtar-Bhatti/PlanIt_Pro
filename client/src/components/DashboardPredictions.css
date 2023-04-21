@@ -34,3 +34,10 @@
   width: 319px;
   height: 66px;
 }
+.chart-container1 {
+  width: 300px;
+  height: 300px;
+  top: 150px;
+  margin: 0 auto;
+  position: relative;
+}

@@ -8,10 +8,12 @@ import Home from './components/home';
 import Editprof from './components/editprof';
 import AdminScreen from './components/admin';
 
+
 // dashboard 
 import DashboardAddMoney from './components/DashboardAddMoney';
 import DashboardRemoveMoney from './components/DashboardRemoveMoney';
 import DashboardToDoList from './components/DashboardToDoList';
+// import DashboardPredictions from './components/DashboardPredictions';
 import DashboardPredictions from './components/DashboardPredictions';
 import DashboardHelp from './components/helpPage';
 import DashboardPieChart from './components/DashboardPiechart';
