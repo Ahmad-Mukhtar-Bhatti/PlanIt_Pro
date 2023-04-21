@@ -56,7 +56,7 @@ const AdminScreen = () => {
 
   const getUsers = async () => {
     try {
-      const response = await axios.post("http://localhost:3010/admin", {});
+      const response = await axios.post("/admin", {});
       console.log("Received users:", response.data.users);
       setUsers(response.data.users);
       handleShow();
@@ -69,7 +69,7 @@ const AdminScreen = () => {
   const getComplaints = async () => {
     try {
       // console.log("yesssyess")
-      const response = await axios.post("http://localhost:3010/admin/complaints", {});
+      const response = await axios.post("admin/complaints", {});
       console.log("Received complaints:", response.data.users);
       setUsers(response.data.users);
       handleShow();
