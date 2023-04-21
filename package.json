@@ -5,6 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+
+    "heroku-prebuild": "export NPM_CONFIG_PRODUCTION=false; export NODE_ENV=; NPM_CONFIG_PRODUCTION=false NODE_ENV=development npm install --only=dev --dev",
     "start": "nodemon index --ignore client",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --force --prefix client && npm run build --prefix client"
   },
