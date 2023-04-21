@@ -39,7 +39,7 @@ const DashboardHomeScreen = () => {
       console.log(userID);
 
       try {
-        const response = await axios.post("http://localhost:3010/home", {
+        const response = await axios.post("/home", {
           userID,
         });
 

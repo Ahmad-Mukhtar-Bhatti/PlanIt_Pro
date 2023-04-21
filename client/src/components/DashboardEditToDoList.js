@@ -40,7 +40,7 @@ const DashboardEditToDoList = (props) => {
     console.log("The task is", d);
     try {
       console.log("HERE NOW", uid);
-      const response = await axios.delete("http://localhost:3010/removeTask/", { data: { uid, task: d } });
+      const response = await axios.delete("/removeTask/", { data: { uid, task: d } });
       alert("Task Marked as Done");
       setToDoList(response.data.message);
       console.log("HERE IT IS", response.data.message);

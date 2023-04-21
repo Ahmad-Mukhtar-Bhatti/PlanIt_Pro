@@ -47,7 +47,7 @@ const Editprof = (props) => {
 
      
 
-      const response = await axios.post("http://localhost:3010/edit", {uid,name, password,oldpassword,url});
+      const response = await axios.post("/edit", {uid,name, password,oldpassword,url});
 
 
       console.log(response.data.message);

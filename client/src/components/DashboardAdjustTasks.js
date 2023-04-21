@@ -23,7 +23,7 @@ const DashboardAdjustTasks = (props) => {
         console.log("The task is", d);
         try {
           console.log("HERE NOW", uid, d);
-          const response = await axios.post("http://localhost:3010/adjustTask/", { uid, task: d, str:"inc" });
+          const response = await axios.post("/adjustTask/", { uid, task: d, str:"inc" });
           //alert("Task Priority Increased");
           setToDoList(response.data.message);
           console.log("HERE IT IS", response.data.message);

@@ -22,7 +22,7 @@ const PieChart = () => {
       console.log(userID);
 
       try {
-        const response = await axios.post("http://localhost:3010/piechart", {
+        const response = await axios.post("/piechart", {
           userID,
         });
 

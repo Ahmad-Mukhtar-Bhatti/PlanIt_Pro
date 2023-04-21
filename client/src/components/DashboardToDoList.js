@@ -22,7 +22,7 @@ const DashboardToDoList = (props) => {
     const fetchToDoList = async () => {
     try {
       console.log("HERE NOW", uid);
-      const response = await axios.post("http://localhost:3010/ToDo", { uid });
+      const response = await axios.post("/ToDo", { uid });
       setToDoList(response.data.message);
       console.log("HERE IT IS", response.data.message);
     } catch (error) {

@@ -18,7 +18,7 @@ const DashboardAddNewTask = (props) => {
   const handleSaveChanges = async (task) => {
     const uid = getUserID();
     try {
-      const response = await axios.post("http://localhost:3010/addNewTask", { uid, task });
+      const response = await axios.post("/addNewTask", { uid, task });
       if (response.data.message === "Success") {
         alert("New Task Added!");
         navigate("/editToDoList")

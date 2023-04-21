@@ -36,18 +36,11 @@ const Signup = (props) => {
     
     console.log(url)
 
-    
-
   
-
-  
-
-
-    
 
     // Check if the username already exists
     try {
-      const response = await axios.post("http://localhost:3010/signup", { username, name, password,url });
+      const response = await axios.post("/signup", { username, name, password,url });
       if (response.data.message === "Success") {
         alert("User Created");
         navigate("/login")

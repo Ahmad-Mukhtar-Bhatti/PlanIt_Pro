@@ -29,7 +29,7 @@ const AdminScreen = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3010/admin/user", { name });
+      const response = await axios.post("/admin/user", { name });
       console.log("Received users:", response.data.users);
       setUsers(response.data.users);
       handleShow();

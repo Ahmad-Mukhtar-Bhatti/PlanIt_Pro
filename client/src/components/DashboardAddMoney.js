@@ -22,7 +22,7 @@ const DashboardAddMoney = () => {
     alert(`Added Money: ${amount}, Comments: ${comments}`)
 
     try {
-      const response = await axios.post("http://localhost:3010/addmoney", {userID,amount,comments});
+      const response = await axios.post("/addmoney", {userID,amount,comments});
 
       console.log("money",response)
       navigate('/home')

@@ -20,7 +20,7 @@ const DashboardAddMoney = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:3010/submitComplaints",
+        "/submitComplaints",
         { userID, comments }
       );
 

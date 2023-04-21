@@ -20,7 +20,7 @@ const Login = (props) => {
     console.log({ username, password });
 
     try {
-      const response=await axios.post("http://localhost:3010/login", { username, password });
+      const response=await axios.post("/login", { username, password });
      
       setCookies(response.data.token);
       window.localStorage.setItem("User_ID", response.data.userID);

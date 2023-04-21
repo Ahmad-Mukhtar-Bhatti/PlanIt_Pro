@@ -52,7 +52,7 @@ if(process.env.NODE_ENV === 'production'){
 const startServer = async () => {
     try{
         connectDB(process.env.MONGODB_URL)
-        App.listen(PORT, () => console.log('server listening on 3010'))
+        App.listen(PORT, () => console.log('server listening on ',PORT))
     }
     catch(error){
         console.error(error)

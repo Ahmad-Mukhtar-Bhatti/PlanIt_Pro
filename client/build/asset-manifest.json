@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.ebbd9259.css",
-    "main.js": "/static/js/main.9ee6e1f0.js",
+    "main.js": "/static/js/main.0232f520.js",
     "static/media/bg01-1@2x.png": "/static/media/bg01-1@2x.a6906f042b0d3d9ecfc3.png",
     "static/media/planitpro_logo.png": "/static/media/planitpro_logo.f9242c9f5312972289c6.png",
     "static/media/graph.png": "/static/media/graph.80c59ee1dc16567c4d95.png",
@@ -15,10 +15,10 @@
     "static/media/line-5.svg": "/static/media/line-5.c41374db9ac847bef82ae199d8da78c5.svg",
     "static/media/line-41.svg": "/static/media/line-41.bf5d2a71db3830a684afc89523027a31.svg",
     "main.ebbd9259.css.map": "/static/css/main.ebbd9259.css.map",
-    "main.9ee6e1f0.js.map": "/static/js/main.9ee6e1f0.js.map"
+    "main.0232f520.js.map": "/static/js/main.0232f520.js.map"
   },
   "entrypoints": [
     "static/css/main.ebbd9259.css",
-    "static/js/main.9ee6e1f0.js"
+    "static/js/main.0232f520.js"
   ]
 }
