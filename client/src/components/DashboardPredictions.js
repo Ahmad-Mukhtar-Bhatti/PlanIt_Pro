@@ -4,9 +4,12 @@ import { useNavigate } from "react-router-dom";
 import { getUserID } from "../hooks/useGetUserID.js";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import graphImg from "./home/graph.png";
+
 
 const img2 = require("./home/topbar.svg");
 const img3 = require("./home/bg01-1@2x.png");
+// const img = require("./home/graph.png");
 
 const myDict = {};
 
@@ -67,10 +70,14 @@ const PieChart = () => {
         <img className="top-bar-icon" alt="" src={img2} />
         <img className="bg-01-1-icon" alt="" src={img3} />
         <div className="dashboard-home-screen-child" />
-        <b className="home">Budget Chart</b>
-      
+        <b className="home">Get Predictions</b>
+        {/* <img>{img}</img> */}
+        <div className="chart-container">
+        <img src={graphImg} />
+        </div>
 
-        <div className="piechart-convert">
+
+        <div className="predictions-convert">
           <button
             onClick={handleSaveChanges}
             style={{

@@ -35,14 +35,7 @@ router.post('/', async (req, res) => {
     const newUserbudget= new BudgetModel({U_id:users._id,balance:0,Target_amnt:0});
     await newUserbudget.save()
 
-
-
-  
-
-
     res.json({message:"Success"});
-
-
 })
 
 export {router as signupRouter};
