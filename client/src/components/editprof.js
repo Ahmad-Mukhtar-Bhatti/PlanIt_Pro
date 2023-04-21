@@ -5,40 +5,59 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import axios from "axios";
 import { useCookies } from 'react-cookie'
+import { getUserID } from "../hooks/useGetUserID.js";
 
 const img = require("./planitpro_logo.png");
 const img2 = require("./home/topbar.svg");
 const img3 = require("./home/bg01-1@2x.png");
 
+
 const Editprof = (props) => {
+  const uid=getUserID();
   const navigate = useNavigate();
   const [, setCookies] = useCookies('access_token')
   const [name, setname] = useState("");
   const [password, setPassword] = useState("");
+  const [oldpassword, setoldpassword] = useState("");
   const [image, setimage] = useState("");
 
   const handleClick = async () => {
+
+    const isConfirmed = window.prompt('Please re-enter your old password to confirm changes.');
+    setoldpassword(isConfirmed)
+    // console.log(props.password);
+    // if (isConfirmed === props.password) {
+    
     console.log("The form was submitted with the following data:");
-    console.log({ name, password, image });
+    console.log({uid, name, password,oldpassword, image });
+
 
     try {
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("password", password);
-      formData.append("image", image);
 
-      const response = await axios.post("http://localhost:3010/edit", formData);
+    const formdata = new FormData();
+    formdata.append("file", image);
+    formdata.append("upload_preset", "et2wvsbo");
 
-      setCookies(response.data.token);
-      window.localStorage.setItem("User_ID", response.data.userID);
+    const result= await axios.post('https://api.cloudinary.com/v1_1/dgbg003qn/image/upload', formdata)
+    
+
+    
+
+      const url =  result.data.secure_url;
+
+     
+
+      const response = await axios.post("http://localhost:3010/edit", {uid,name, password,oldpassword,url});
+
 
       console.log(response.data.message);
 
-      // if (response.data.message !== "invalid") {
-        navigate("/home", { state: { name } });
-      // } else {
-      //   alert("Invalid credentials. Please try again later.");
-      // }
+      if (response.data.message !== "invalid") {
+        alert("Your changes have been saved.")
+        navigate("/home");
+      } else {
+        alert("Invalid password. Please try again.");
+      }
     } catch (error) {
       console.log("An error occurred");
     }
@@ -51,15 +70,7 @@ const Editprof = (props) => {
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
-  const handleButtonClick = (props) => {
-    const isConfirmed = window.prompt('Please re-enter your password to confirm changes.');
-    console.log(props.password);
-    // if (isConfirmed === props.password) {
-    navigate('/home')      
-    // } else {
-    //   alert('Incorrect password. Please try again.');
-    // }
-  };
+
 
   
   const FormHeader = (props) => <h1 className={styles.loginheaderTitle}>{props.title}</h1>;
@@ -70,7 +81,7 @@ const Editprof = (props) => {
     <span>
       <FormInput
         description="Name"
-        placeholder="Enter your name"
+        placeholder="Enter your new name"
         type="text"
         value={props.name}
         onChange={props.handlenameChange}
@@ -78,7 +89,7 @@ const Editprof = (props) => {
       <br></br>
       
       <FormInput
-        description="Profile Picture:"
+        description="Upload new Profile Picture:"
         type="file"
         onChange={(event) => {
           props.setImage(event.target.files[0]);
@@ -95,14 +106,14 @@ const Editprof = (props) => {
         />
       <br></br>
 
-      <FormButton title="Make changes" onClick={handleButtonClick} />
+      <FormButton title="Make changes" onClick={handleClick} />
     </span>
   );
 };
 
 const FormButton = (props) => (
   <div id="button" class="row">
-    <button className={styles.button} onClick={handleButtonClick}>{props.title}</button>
+    <button className={styles.button} onClick={handleClick}>{props.title}</button>
   </div>
 );
 

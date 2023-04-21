@@ -8,22 +8,31 @@ const router=express.Router();
 
 
 router.post('/', async (req, res) => {
-    const {username, password,url} = req.body;
+    const {uid,name, password,oldpassword,url} = req.body;
 
-    console.log("login backed recieved",username,password);
+    console.log("login backed recieved",req.body);
 
-    const user = await userModel.findOne({ username});
+    const user = await userModel.findOne({_id: uid});
 
     if (!user) {
         return res.json({ message :"invalid"})
     }
 
-    if(! (await bcrypt.compare(password, user.password))){
-        return res.json({ message : "invalid password"})
+    if(! (await bcrypt.compare(oldpassword, user.password))){
+        return res.json({ message : "invalid"})
+    }
+    else{
+        user.name = name;
+        user.password = password;
+        user.pic = url;
+
+        user.save();
+        return res.json({ message :"Success"})
+
     }
 
    
-    res.json({ token ,userID:user._id});
+    
 
 
 })
