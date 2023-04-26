@@ -22,8 +22,9 @@ router.post('/', async (req, res) => {
         return res.json({ message : "invalid"})
     }
     else{
+        const hasher= await bcrypt.hash(password,10);
         user.name = name;
-        user.password = password;
+        user.password = hasher;
         user.pic = url;
 
         user.save();

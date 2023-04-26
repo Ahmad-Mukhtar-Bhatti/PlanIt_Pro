@@ -36,10 +36,44 @@ const Signup = (props) => {
     
     console.log(url)
 
+
+    function isValidUsername(username) {
+      if (username.length < 5) {
+        return false;
+      }
+      
+      if (!/\d/.test(username)) {
+        return false;
+      }
+      
+      return true;
+    }
+    
+    function isValidPassword(password) {
+      if (password.length < 5) {
+        return false;
+      }
+      return true; 
+    }
+
   
 
     // Check if the username already exists
+
+    
     try {
+
+      if (isValidUsername(username) === false){
+        alert("Username needs to have minimum 5 characters and atleast 1 number");
+        console.log("Username error")
+        return;
+      }
+
+      if (isValidPassword(password) === false){
+        alert("Password needs to have minimum 5 characters");
+        console.log("Password error")
+        return;
+      }
       const response = await axios.post("/signup", { username, name, password,url });
       if (response.data.message === "Success") {
         alert("User Created");
