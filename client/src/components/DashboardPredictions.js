@@ -11,8 +11,32 @@ const img2 = require("./home/topbar.svg");
 const img3 = require("./home/bg01-1@2x.png");
 // const img = require("./home/graph.png");
 
+const userID = getUserID();
+
 const PieChart = () => {
     const navigate = useNavigate();
+    const [suggestions, setSuggestions] = useState({});
+
+
+
+    useEffect(() => {
+      const getdata = async (userID) => {
+        console.log("The form was submitted with the following data:");
+        console.log(userID);
+  
+        try {
+          const response = await axios.post("/predict", { userID});
+          setSuggestions(response.data.suggestions)
+     
+        } catch (error) {
+          console.log("An error occurred");
+        }
+      };
+  
+      getdata(userID);
+    }, []);
+
+
 
     const handleSaveChanges = () => {
         navigate("/home");
@@ -28,6 +52,26 @@ const PieChart = () => {
         <div className="chart-container">
         <img src={graphImg} />
         </div>
+
+
+        <h2>Suggestions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Suggestion</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.entries(suggestions).map(([day, suggestion]) => (
+            <tr key={day}>
+              <td>{day}</td>
+              <td>{suggestion}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
 
 
         <div className="predictions-convert">

@@ -16,6 +16,7 @@ import { complaintsRouter } from './routes/complaints.routes.js'
 import { adminallRouter } from './routes/admin.routes.js'
 import { getPredictionsRouter } from './routes/getpredictions.routes.js'
 import { EditRouter } from './routes/edit.routes.js'
+import { predictRouter } from './routes/predict.routes.js'
 
 dotenv.config()
 
@@ -41,7 +42,7 @@ App.use('/piechart', piechartRouter)
 App.use('/admin', adminallRouter);
 App.use('/getPredictions', getPredictionsRouter)
 App.use('/edit', EditRouter)
-
+App.use('/predict', predictRouter)
 const PORT=process.env.PORT || 3010;
 
 
