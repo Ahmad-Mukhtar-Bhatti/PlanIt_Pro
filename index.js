@@ -16,7 +16,7 @@ import { complaintsRouter } from './routes/complaints.routes.js'
 import { adminallRouter } from './routes/admin.routes.js'
 import { getPredictionsRouter } from './routes/getpredictions.routes.js'
 import { EditRouter } from './routes/edit.routes.js'
-import { predictRouter } from './routes/predict.routes.js'
+// import { predictRouter } from './routes/predict.routes.js'
 
 dotenv.config()
 
