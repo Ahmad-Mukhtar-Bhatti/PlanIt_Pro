@@ -42,7 +42,7 @@ App.use('/piechart', piechartRouter)
 App.use('/admin', adminallRouter);
 App.use('/getPredictions', getPredictionsRouter)
 App.use('/edit', EditRouter)
-App.use('/predict', predictRouter)
+// App.use('/predict', predictRouter)
 const PORT=process.env.PORT || 3010;
 
 

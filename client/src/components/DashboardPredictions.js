@@ -19,22 +19,22 @@ const PieChart = () => {
 
 
 
-    useEffect(() => {
-      const getdata = async (userID) => {
-        console.log("The form was submitted with the following data:");
-        console.log(userID);
+    // useEffect(() => {
+    //   const getdata = async (userID) => {
+    //     console.log("The form was submitted with the following data:");
+    //     console.log(userID);
   
-        try {
-          const response = await axios.post("/predict", { userID});
-          setSuggestions(response.data.suggestions)
+    //     try {
+    //       const response = await axios.post("/predict", { userID});
+    //       setSuggestions(response.data.suggestions)
      
-        } catch (error) {
-          console.log("An error occurred");
-        }
-      };
+    //     } catch (error) {
+    //       console.log("An error occurred");
+    //     }
+    //   };
   
-      getdata(userID);
-    }, []);
+    //   getdata(userID);
+    // }, []);
 
 
 
@@ -54,7 +54,7 @@ const PieChart = () => {
         </div>
 
 
-        <h2>Suggestions</h2>
+        {/* <h2>Suggestions</h2>
       <table>
         <thead>
           <tr>
@@ -70,7 +70,7 @@ const PieChart = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </table> */}
 
 
 
